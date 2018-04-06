@@ -1,0 +1,226 @@
+{
+	"name": "ff0000-ad-tech-builder",
+	"version": "1.0.0",
+	"lockfileVersion": 1,
+	"requires": true,
+	"dependencies": {
+		"@ff0000-ad-tech/ad-animation": {
+			"version": "1.2.0",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-animation/-/ad-animation-1.2.0.tgz",
+			"integrity": "sha512-MT5KL8KVCXrQTuu0mfeGU+TfFQu1Dn98emcOCS4VsEbXC5K3qvBdD+o7+7rGbG2ebAEta9q3Sd/YYu3McFS14w==",
+			"requires": {
+				"@ff0000-ad-tech/ad-control": "3.0.0",
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-ui": "1.0.4",
+				"@ff0000-ad-tech/ad-utils": "1.2.0",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-assets": {
+			"version": "1.0.3",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-assets/-/ad-assets-1.0.3.tgz",
+			"integrity": "sha512-JhilrLwfws+9JpLZFQ5U0hs/P7ab0hWwDr8zeTJZZ5xVAWzcOeH4KijiFUvvKmWZELQ+HmBdmf3bzRPbGDHLCA=="
+		},
+		"@ff0000-ad-tech/ad-canvas": {
+			"version": "1.0.4",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-canvas/-/ad-canvas-1.0.4.tgz",
+			"integrity": "sha512-G+EtzSfjAYegiE3Q/2gBctNBcEnllzI7hIi/ARQCbdTOrD6ViMdZM5k+AQVSCAbICQKIH/HhxfHXH+4zkivzqw==",
+			"requires": {
+				"@ff0000-ad-tech/ad-control": "3.0.0",
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-external": "2.0.3",
+				"@ff0000-ad-tech/ad-geom": "1.1.1",
+				"@ff0000-ad-tech/ad-legacy": "1.0.1",
+				"@ff0000-ad-tech/ad-ui": "1.0.4",
+				"@ff0000-ad-tech/ad-utils": "1.2.0",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-control": {
+			"version": "3.0.0",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-control/-/ad-control-3.0.0.tgz",
+			"integrity": "sha512-39Lx8ubPATuPMi3FV7yJUljPxoI7t3M5Pim5w8HMSfKR9B5dKopKT744ioeFCKJi4CA80p5uQszJlDoSwh1GVQ==",
+			"requires": {
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-external": "2.0.3",
+				"@ff0000-ad-tech/ad-geom": "1.1.1",
+				"@ff0000-ad-tech/ad-load": "1.0.8",
+				"@ff0000-ad-tech/ad-utils": "1.2.0",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-dates": {
+			"version": "2.1.1",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-dates/-/ad-dates-2.1.1.tgz",
+			"integrity": "sha512-RbqYlRFtslizIjhefeTSQA68mM+8xGit63W6QelF9yRm82UwWie0MXSWBwK1ay+8tI7P51M/ETjbDEU2eiC3pA==",
+			"requires": {
+				"@ff0000-ad-tech/ad-dates": "2.1.1",
+				"@ff0000-ad-tech/ad-legacy": "1.0.1",
+				"@ff0000-ad-tech/ad-load": "1.0.8",
+				"@ff0000-ad-tech/ad-utils": "1.2.0"
+			}
+		},
+		"@ff0000-ad-tech/ad-entry": {
+			"version": "1.0.5",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-entry/-/ad-entry-1.0.5.tgz",
+			"integrity": "sha512-DSgDVhnEgCj+S4LMVwqz49Mjm1xb5ZWaWEcJWYvREanFTSH0vm4WZfj+AlllLks6Ld3XUAZU/qpIa1dEmIC4iA=="
+		},
+		"@ff0000-ad-tech/ad-events": {
+			"version": "1.1.3",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-events/-/ad-events-1.1.3.tgz",
+			"integrity": "sha512-bo62B9iP2E6qd7ABBVBkF8lbBf6z+NSRcUiEmwI4cEVk0iVSXn3MvA1Xm9T6ZvdsSvpcRDYS/eQ/4ixowB/NuA==",
+			"requires": {
+				"@ff0000-ad-tech/ad-external": "2.0.3",
+				"@ff0000-ad-tech/ad-polyfills": "1.0.3",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-external": {
+			"version": "2.0.3",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-external/-/ad-external-2.0.3.tgz",
+			"integrity": "sha512-h8xUMXwVj4exMxthTHWsPpGS0TNFT1SNcbe2KohuI1rIFn1ssdgnGjWfZjFAkTTw9kh5CgCRh4Wit6ceWvoFPg==",
+			"requires": {
+				"@ff0000-ad-tech/ad-dates": "2.1.1",
+				"@ff0000-ad-tech/ad-legacy": "1.0.1",
+				"@ff0000-ad-tech/ad-load": "1.0.8",
+				"@ff0000-ad-tech/ad-utils": "1.2.0"
+			}
+		},
+		"@ff0000-ad-tech/ad-geom": {
+			"version": "1.1.1",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-geom/-/ad-geom-1.1.1.tgz",
+			"integrity": "sha512-cufK5QRI+YnkFlrU44r7I5Tc9rZWcSdt/2f8PqSKti/JGMCn8LZK69ihNZpe5UmHlotCzE7meGM+woK6LOwxVg==",
+			"requires": {
+				"@ff0000-ad-tech/ad-utils": "1.2.0"
+			}
+		},
+		"@ff0000-ad-tech/ad-legacy": {
+			"version": "1.0.1",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-legacy/-/ad-legacy-1.0.1.tgz",
+			"integrity": "sha512-1UldytlIrx2fOphxL+Q1DSU9AtHB2aAJNh7OOwRYWyHpv5zR3s2+G13kvZh52vigQLiE+Wp3nZTusYJkn3OTng==",
+			"requires": {
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-utils": "1.2.0",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-load": {
+			"version": "1.0.8",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-load/-/ad-load-1.0.8.tgz",
+			"integrity": "sha512-xMDS/7La+kBeEKjl/m+vkcx0/Ss/vH8nONkJXJ2Gihlcd1UsBKAAv07AnWx3vlMIlhglCm4ReANRWnPpd5BIwA=="
+		},
+		"@ff0000-ad-tech/ad-particles": {
+			"version": "2.0.0",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-particles/-/ad-particles-2.0.0.tgz",
+			"integrity": "sha512-pCtVQnNyIekDPkYolxhsTX/0vu8qBWIxuKcHHk5L+0X9HacAOE4xFKj8el8MBQHkbS/o8gG/ZPU7wkHPmXDVrw==",
+			"requires": {
+				"@ff0000-ad-tech/ad-geom": "1.1.1",
+				"@ff0000-ad-tech/ad-ui": "1.0.4",
+				"@ff0000-ad-tech/ad-utils": "1.2.0"
+			}
+		},
+		"@ff0000-ad-tech/ad-polyfills": {
+			"version": "1.0.3",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-polyfills/-/ad-polyfills-1.0.3.tgz",
+			"integrity": "sha512-uyV8pOYyFxFP7YnKA1d8q1rjF/P1TFT39RjHUJ2viuAhtAxcdKpqHjEjqF5h50qaVn2C2JEwssrn4ucdXa6xaA=="
+		},
+		"@ff0000-ad-tech/ad-ui": {
+			"version": "1.0.4",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-ui/-/ad-ui-1.0.4.tgz",
+			"integrity": "sha512-xMD9sfTJn0SxzaylB6bFy3ht+5g6sDHmuvZLBBrhMobNTHPD8IpYVY2vsvNqZUUJQ3BfyCMaVZCq8X5+WnZ8BQ==",
+			"requires": {
+				"@ff0000-ad-tech/ad-control": "3.0.0",
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-utils": "1.2.0",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-utils": {
+			"version": "1.2.0",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-utils/-/ad-utils-1.2.0.tgz",
+			"integrity": "sha512-0YSwsV1cxJVzdCR+ne9EKYxZ8B1qQJcdv9pARPFbH4ivu2FnVsBDX55c38fyd8ezxbvgSOWF9+L8HoVBQJv9+Q==",
+			"requires": {
+				"@ff0000-ad-tech/ad-video": "1.0.3",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-video": {
+			"version": "1.0.3",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-video/-/ad-video-1.0.3.tgz",
+			"integrity": "sha512-wpjvQp16Qtvxo40lIeggWGazUHCe98VhwUk91nbcwR7Exjm2pdZrlsklascfP9DzGVLt6G6xO5M6zZMzVoUQYQ==",
+			"requires": {
+				"@ff0000-ad-tech/ad-canvas": "1.0.4",
+				"@ff0000-ad-tech/ad-control": "3.0.0",
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-external": "2.0.3",
+				"@ff0000-ad-tech/ad-load": "1.0.8",
+				"@ff0000-ad-tech/ad-ui": "1.0.4",
+				"@ff0000-ad-tech/ad-view": "1.0.5"
+			}
+		},
+		"@ff0000-ad-tech/ad-view": {
+			"version": "1.0.5",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-view/-/ad-view-1.0.5.tgz",
+			"integrity": "sha512-vbwnsREI4JKfVEGSFyrD8sdPTvC1BTg2XXbzEzMf3R5pEmXAwjPgTh1HzGHgChufQ4f2Zzf3TBZbFR1zjUC/uw==",
+			"requires": {
+				"@ff0000-ad-tech/ad-control": "3.0.0",
+				"@ff0000-ad-tech/ad-events": "1.1.3",
+				"@ff0000-ad-tech/ad-external": "2.0.3",
+				"@ff0000-ad-tech/ad-geom": "1.1.1",
+				"@ff0000-ad-tech/ad-legacy": "1.0.1",
+				"@ff0000-ad-tech/ad-ui": "1.0.4",
+				"@ff0000-ad-tech/ad-utils": "1.2.0"
+			}
+		},
+		"@netflixadseng/pk-component-assets": {
+			"version": "1.1.0",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/pk-component-assets/-/pk-component-assets-1.1.0.tgz",
+			"integrity": "sha512-tc/G9e0YJN9g9mpmys8aNk9EGzT49FhJdGn1G7YI4Yo2bQw/CKFBduB2wDuD5VM0IcNyy6QuAtr/N2OA/VH25w=="
+		},
+		"@netflixadseng/pk-component-utils": {
+			"version": "1.2.0",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/pk-component-utils/-/pk-component-utils-1.2.0.tgz",
+			"integrity": "sha512-ElqyG4O7iPQDeCqgMhx8rgSo6A+se01+wVNV83i8DkBSM0l1v3k3ZNj3TPF8CIMw3MMvqGtNP/u7ba5Ui003Sw=="
+		},
+		"@netflixadseng/wc-monet-integrator": {
+			"version": "1.0.12",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-monet-integrator/-/wc-monet-integrator-1.0.12.tgz",
+			"integrity": "sha512-wVkh82Fq1hglT8M57RADgZ9qViz/BkHpIcjWKKXqV1hkcyAMLkF13T5mwVzoW5TWD4wpvvliYGo3KIy5AWr2+g=="
+		},
+		"@netflixadseng/wc-netflix-brand-logo": {
+			"version": "1.3.3",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-brand-logo/-/wc-netflix-brand-logo-1.3.3.tgz",
+			"integrity": "sha512-/PmR4e4//yxcCYhPSgxHNK+SaYT797o+zAOA3O3rw2nMm0iJyoqgqODQk88PP636uGGoDBS6RzOHLxggb/9IEw=="
+		},
+		"@netflixadseng/wc-netflix-cta": {
+			"version": "1.3.3",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-cta/-/wc-netflix-cta-1.3.3.tgz",
+			"integrity": "sha512-rXOkjQTBA5Cyok5N7txjTqcJPSy3CbC4g3hpTuoaBgtsE6Dl+gJNam4hcOobHoLq94iBws5kWk2UCXk5CinFfw=="
+		},
+		"@netflixadseng/wc-netflix-flushed-ribbon": {
+			"version": "1.1.3",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-flushed-ribbon/-/wc-netflix-flushed-ribbon-1.1.3.tgz",
+			"integrity": "sha512-fuEd7FKqPwNEDnaFqOPt36Dr6Sx8+Mt3lgxQJQXqO4G2nnHSGhzs+3hJySaF+CubKaL8A2o5OfyT9TBKg1X0uQ=="
+		},
+		"@netflixadseng/wc-netflix-fonts": {
+			"version": "1.1.0",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-fonts/-/wc-netflix-fonts-1.1.0.tgz",
+			"integrity": "sha512-vR5JnIdRCE2LEncgfpR9p/gQRt+kOttqncuEEBXT/9nFL/Bmf3ePsYRLB8ZFzhVsDEkSrmbYMwQvSyVMF9+y1w=="
+		},
+		"@netflixadseng/wc-netflix-img": {
+			"version": "1.0.20",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-img/-/wc-netflix-img-1.0.20.tgz",
+			"integrity": "sha512-T2KGx1gOwSHCsS5ee/OJSplkcXfHPEgPpj8eG+EcMnu0TqRW3IMXkLmRC65vpESu1FX9NQPkkEgcxK9bZV5T7w=="
+		},
+		"@netflixadseng/wc-netflix-text": {
+			"version": "1.0.10",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-text/-/wc-netflix-text-1.0.10.tgz",
+			"integrity": "sha512-xXSmTw/pgZRR3GpWZ1whzzbCK9BgYOR/YyJgCkrLRrlRgCXgarCKamC54U9gwHhdalG2zK07bf7K2n0ZSCTsQA=="
+		},
+		"@netflixadseng/wc-netflix-video": {
+			"version": "1.2.0",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-netflix-video/-/wc-netflix-video-1.2.0.tgz",
+			"integrity": "sha512-EXbsd9ve96WMTpyRE+4kwAQ+G2DZn6+/0NI6t9MFQzxCYJMOfpRbv66ZtZJvXfK6r8iSwEAeqXrWLpCGwecRwQ=="
+		}
+	}
+}

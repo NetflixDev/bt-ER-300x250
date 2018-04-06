@@ -9,7 +9,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@netflixadseng/pk-component-assets": "latest",
-		"@netflixadseng/pk-component-utils": "latest",	
+		"@netflixadseng/pk-component-utils": "latest",
 		"@netflixadseng/wc-netflix-cta": "latest",
 		"@netflixadseng/wc-monet-integrator": "latest",
 		"@netflixadseng/wc-netflix-video": "latest",
