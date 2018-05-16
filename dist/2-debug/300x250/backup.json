@@ -44,10 +44,17 @@
 			"id": "Exit_URL_Desktop",
 			"url": "https://www.netflix.com/"
 		},
+		"video.Supercut": {
+			"type": "video",
+			"id": "Supercut",
+			"url": "http://ae.nflximg.net/monet/video/fpo/1x1.mp4",
+			"videoType": "SUPERCUT"
+		},
 		"video.Trailer": {
-			"type": "url",
-			"id": "Trailer_1",
-			"url": "http://ae.nflximg.net/monet/video/fpo/1x1.mp4"
+			"type": "video",
+			"id": "Trailer",
+			"url": "http://ae.nflximg.net/monet/video/fpo/1x1.mp4",
+			"videoType": "TRAILER"
 		},
 		"image.endframe_bg_300x250": {
 			"type": "image",

@@ -8,7 +8,7 @@
 	"author": "RED Interactive Agency",
 	"license": "MIT",
 	"dependencies": {
-		"@netflixadseng/pk-component-utils": "^3.0.0",	
+		"@netflixadseng/pk-component-utils": "^3.0.0",
 		"@netflixadseng/wc-netflix-preloader": "^3.0.0",
 		"@netflixadseng/wc-netflix-cta": "^3.0.0",
 		"@netflixadseng/wc-monet-integrator": "^3.0.0",

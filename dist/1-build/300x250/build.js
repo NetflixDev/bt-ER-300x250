@@ -1,27 +1,20 @@
-/* BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 1.9.3 / AdHtml: v2.8.2 / Created: 04/03/18 02:54pm */
+/* BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 3.0.3 / AdHtml: v0.1.2 / Created: 05/16/18 10:12am */
 import '@netflixadseng/wc-netflix-brand-logo'
 import '@netflixadseng/wc-netflix-cta'
-import { ImageManager, Core } from 'ad-control'
-import '@netflixadseng/pk-component-utils/src/pfCustomEvent.js'
-import '@netflixadseng/wc-netflix-fonts/src/NetflixFontsComponent.js'
-import '@netflixadseng/wc-monet-integrator/src/monet-integrator.js'
-import { Gesture, GestureEvent } from 'ad-events'
-import '@netflixadseng/pk-component-assets/src/main.js'
-import '@netflixadseng/pk-component-utils/src/pfClassList.js'
-import { MonetUtils } from 'ad-utils'
 import '@netflixadseng/wc-netflix-text'
 import '@netflixadseng/wc-netflix-img'
 import { Styles, FullScreen, Markup, Align, Effects } from 'ad-view'
-import { Device } from 'ad-external'
-import '@netflixadseng/pk-component-utils/src/createStyle.js'
-import { Common } from '../common/js/control/Common.js'
-import '@netflixadseng/wc-netflix-video'
-import '@netflixadseng/wc-netflix-fonts/src/webfont_for_components.js'
-import '@netflixadseng/pk-component-utils/src/SvgIcon.js'
+import { ImageManager, Core } from 'ad-control'
+import { Gesture, GestureEvent } from 'ad-events'
+import '@netflixadseng/wc-monet-integrator'
 import '@netflixadseng/wc-netflix-flushed-ribbon'
-import '@netflixadseng/pk-component-utils/src/main.js'
+import { Common } from '../common/js/control/Common.js'
+import { Device } from 'ad-external'
+import '@netflixadseng/wc-netflix-fonts'
+import { MonetUtils } from 'ad-utils'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
-import '@netflixadseng/pk-component-utils/src/DeviceUtils.js'
+import './images/default_300x250.jpg'
+import '@netflixadseng/wc-netflix-video'
 
 /* -- CONTROL ----------------------------------------------------------------------------------------------------
  *
@@ -105,9 +98,6 @@ window.Control = new function() {
 		})
 		View.trailerFrame.hide()
 
-		Gesture.add(View.trailerFrame.mainVideoPlayer, GestureEvent.CLICK, function(event) {
-			GestureEvent.stop(event)
-		})
 		View.trailerFrame.mainVideoPlayer.addEventListener('video-close', Animation.hideTrailerFrame)
 		View.trailerFrame.mainVideoPlayer.addEventListener('video-complete', Animation.hideTrailerFrame)
 		View.ribbon.addEventListener('coverComplete', function(event) {
@@ -254,7 +244,7 @@ function Intro() {
 	T.introVideoPlayer.setAttribute('height', adParams.adHeight)
 	T.introVideoPlayer.setAttribute('close-color-1', adData.colors.red)
 	T.introVideoPlayer.setAttribute('close-color-2', adData.colors.white)
-	T.introVideoPlayer.setAttribute('data-dynamic-key', 'Trailer')
+	T.introVideoPlayer.setAttribute('data-dynamic-key', 'Supercut')
 	T.introVideoPlayer.setAttribute('muted', '')
 	//T.introVideoPlayer.setAttribute('autoplay', '')
 	T.introVideoPlayer.addEventListener('video-click', Control.handleIntroClick)

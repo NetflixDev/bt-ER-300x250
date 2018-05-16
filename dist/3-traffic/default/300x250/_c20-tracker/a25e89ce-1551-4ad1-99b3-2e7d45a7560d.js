@@ -2,6 +2,7 @@
 if (typeof module === 'undefined') {
 	module = {}
 }
+// prettier-ignore
 module.exports = {
   "id": "a25e89ce-1551-4ad1-99b3-2e7d45a7560d",
   "name": "bt-ES6-Webpack-Intro-Endframe-Branded",
@@ -9,9 +10,9 @@ module.exports = {
   "type": "build_templates",
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1526491131082,
+  "updated": 1526494227503,
   "username": "GitHub",
   "full_name": "NetflixAdsEng/bt-ES6-Webpack-Intro-Endframe-Branded",
   "html_url": "https://github.com/NetflixAdsEng/bt-ES6-Webpack-Intro-Endframe-Branded",
   "version": "1.0.1"
-}
+};

@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
 
-const debug = require('debug')
+const debug = require('@ff0000-ad-tech/debug')
 var log = debug('webpack.config.js')
 
 const PM = require('@ff0000-ad-tech/wp-process-manager')
@@ -192,7 +192,7 @@ module.exports = config => {
 			test: [].concat(imageIncludes).concat(fontIncludes),
 			use: [
 				{
-					loader: 'fba-loader',
+					loader: '@ff0000-ad-tech/fba-loader',
 					options: {
 						emitFile: false
 					}

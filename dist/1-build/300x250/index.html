@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 1.9.3 / AdHtml: v2.8.2 / Created: 04/03/18 02:54pm -->
+<!-- BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 3.0.3 / AdHtml: v0.1.2 / Created: 05/16/18 10:12am -->
 
 <head>
 	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
@@ -11,7 +11,7 @@
 		<!-- Red.Network.meta.end -->
 
 
-	<title>RED Dev 300x250</title>
+	<title>NETFLIX Build_Sources 300x250</title>
 
 	<script type="text/javascript">
 
@@ -65,6 +65,11 @@
 						'SINGLE_TITLE', //'VIDEO', 'EXPANDABLE', 'CAROUSEL', 'MULTI_TITLE', 'AUTOPLAY'
 					],
 				},
+				version: {
+					major: 0,
+					minor: 1,
+					patch: 2
+				},
 			};
 		/*-- Red.Settings.ad_params.end --*/
 
@@ -73,9 +78,7 @@
 			var assets = {
 				preloader: {
 					backgroundColor: "#ffffff",
-					images: [{
-						source: "preloader.gif"
-					}]
+					images: []
 				},
 				failover: {
 					images: [{
@@ -118,7 +121,7 @@
 
 		/*-- Red.Settings.external_includes.start --*/
 		var externalIncludes = [
-				"https://cdnjs.cloudflare.com/ajax/libs/document-register-element/1.7.0/document-register-element.js",
+				'https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js',
 				"https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js",
 			];
 		/*-- Red.Settings.external_includes.end --*/
@@ -197,6 +200,15 @@
 	<script type="text/javascript">
 		/*-- Red.Inject.promise_polyfill.start --*/
 		/*-- Red.Inject.promise_polyfill.end --*/
+
+/*-- Red.Requester.netflix_custom_element_polyfill.start --*/ 
+inject('https://ae.nflximg.net/monet/scripts/custom-element.js')
+/*-- Red.Requester.netflix_custom_element_polyfill.end --*/ 
+
+/*-- Red.Requester.netflix_preloader.start --*/ 
+inject('../node_modules/@netflixadseng/wc-netflix-preloader/NetflixPreloaderComponent.min.js')
+/*-- Red.Requester.netflix_preloader.end --*/ 
+
 	</script>
 
 
@@ -229,6 +241,9 @@
 		var Network,
 			queryParams,
 			adData
+var netflixPreloader
+
+
 
 		/* -- LAUNCH --------------------------------------------
 		 *
@@ -237,13 +252,24 @@
 		// immediatelly invoked in inline_entry (node_modules/ad-entry/index.js)
 		function prepareIndex() {
 			console.log('Index.prepareIndex()')
-			return new Promise(function(resolve) {
+			return new Promise(function (resolve) {
+				/*-- Red.Network.onload.start --*/
+				resolve()
+				/*-- Red.Network.onload.end --*/
+
+				netflixPreloader = document.createElement('netflix-preloader')
+				netflixPreloader.id = 'netflix-preloader'
+				netflixPreloader.setAttribute('width', adParams.adWidth)
+				netflixPreloader.setAttribute('height', adParams.adHeight)
+				netflixPreloader.setAttribute('bg-color', assets.preloader.backgroundColor)
+				netflixPreloader.setAttribute('frame-color', document.getElementById('preloader').style.borderColor)
+				document.getElementById('preloader').appendChild(netflixPreloader)
 				/*-- Red.Network.onload.start --*/
 				resolve()
 				/*-- Red.Network.onload.end --*/
 
 
-			}, function(error) {
+			}, function (error) {
 				global.failAd()
 			})
 		}
@@ -251,10 +277,10 @@
 		// ad-params
 		function prepareAdParamsMisc() {
 			console.log('Index.prepareAdParamsMisc()')
-			return new Promise(function(resolve) {
+			return new Promise(function (resolve) {
 				resolve()
 
-			}, function(error) {
+			}, function (error) {
 				global.failAd()
 			})
 		}
@@ -262,15 +288,17 @@
 		// preloader
 		function preparePreloadMisc() {
 			console.log('Index.preparePreloadMisc()')
-			return new Promise(function(resolve) {
+			return new Promise(function (resolve) {
 				resolve()
 
-			}, function(error) {
+			}, function (error) {
 				global.failAd()
 			})
 		}
 		function removePreloader() {
 			console.log('Index.removePreloader()')
+			makeAuxClickable()
+
 			var preloader = document.getElementById('preloader')
 			if (preloader) {
 				var aux = document.getElementById('aux')
@@ -306,9 +334,11 @@
 		}
 		function handleAuxClick() {
 			console.log('Index.handleAuxClick()')
+			/*-- Red.Network.exit_aux.start --*/
 			Network.exit(clickTag)
-			if (adParams.redAnalytics)
-				trackExit()
+			/*-- Red.Network.exit_aux.end --*/
+
+
 		}
 
 			function logMonetClick(targetId, event) {
@@ -371,6 +401,23 @@
 				}
 			}
 			return _url
+		}
+
+		// check version against
+		function isVersionOrNewer(version) {
+			const semver = version.split('.').map(function (v) { return parseInt(v) })
+			if (adParams.version.major > semver[0]) {
+				return true
+			} else if (adParams.version.major === semver[0]) {
+				if (adParams.version.minor > semver[1]) {
+					return true
+				} else if (adParams.version.minor > semver[1]) {
+					if (adParams.version.patch >= semver[2]) {
+						return true
+					}
+				}
+			}
+			return false
 		}
 	</script>
 
