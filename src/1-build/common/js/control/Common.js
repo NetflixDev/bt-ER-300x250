@@ -30,6 +30,8 @@ export class Common {
 		return new Promise((resolve, reject) => {
 			let promises = []
 
+
+
 			Promise.all(promises)
 				.then(() => {
 					this.prepareAdData()
@@ -41,6 +43,8 @@ export class Common {
 		})
 	}
 
+
+
 	/**
 		@memberof Common
 		@method prepareAdData
@@ -49,6 +53,7 @@ export class Common {
 	*/
 	static prepareAdData() {
 		console.log('Common.prepareAdData()')
+
 
 		global.adData = new AdData()
 
