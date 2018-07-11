@@ -6,7 +6,7 @@ This is a starting point for standard Monet executions. It is based on an open-s
 
 ### Starting a New Unit
 
-For an overview of how to work with this template, please start with the [FAT Intro](https://github.com/ff0000-ad-tech/ad-docs/blob/master/README.md).
+For an overview of how to work with this template, please start with this [README](https://github.com/ff0000-ad-tech/tmpl-standard-base/blob/master/README.md).
 
 You may also reach RED via `c20support` or `monet-developers` email aliases at `netflix.com`.
 
