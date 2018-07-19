@@ -19,7 +19,7 @@
 		"@ff0000-ad-tech/debug": "latest",
 		"@ff0000-ad-tech/fba-loader": "latest",
 		"@ff0000-ad-tech/webpack-rollup-babel-loader": "latest",
-		"@ff0000-ad-tech/wp-creative-server": "latest",
+		"@ff0000-ad-tech/wp-creative-server": "ssh+git://git@github.com:ff0000-ad-tech/wp-creative-server.git#feature/api-wp-cmd",
 		"@ff0000-ad-tech/wp-deploy-manager": "latest",
 		"@ff0000-ad-tech/wp-process-manager": "latest",
 		"babel-core": "^6.26.0",

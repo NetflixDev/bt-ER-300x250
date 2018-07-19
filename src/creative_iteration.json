@@ -3,15 +3,15 @@
     "tag_sheets": [], 
     "clone_priviledge": "none", 
     "flash_project_settings": {}, 
-    "id": "071c5453-f675-44c4-8517-79c569afd920", 
+    "id": "0dbdd34d-0290-412f-a0ba-2d2e04d2b460", 
     "size": "", 
     "by_user": "greg.connell.mbp-dev", 
     "name": "bt-ES6-Webpack-Intro-Endframe-Branded", 
-    "modified_datetime": "05/16/18 10:12am", 
+    "modified_datetime": "07/19/18 11:51am", 
     "check_logs": [
         {
             "action": "quick-out", 
-            "log_datetime": "05/16/18 10:12am", 
+            "log_datetime": "07/19/18 11:51am", 
             "size_hash": "d41d8cd98f00b204e9800998ecf8427e", 
             "by_user": "greg.connell.mbp-dev", 
             "comments": ""
