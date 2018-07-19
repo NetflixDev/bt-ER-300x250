@@ -1,6 +1,6 @@
 {
   "name": "bt-ES6-Webpack-Intro-Endframe-Branded",
-  "version": "1.0.1",
+  "version": "3.0.0",
   "description": "C20/Monet-compatible templates that use  https://github.com/ff0000-ad-tech/ad-docs/blob/master/README.md",
   "scripts": {
     "c20": "node lib/api.js --cmd track && node lib/api.js --cmd publish"
