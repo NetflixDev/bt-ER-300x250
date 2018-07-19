@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 3.0.3 / AdHtml: v0.1.2 / Created: 05/16/18 10:12am -->
+<!-- BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 3.1.0 / AdHtml: v0.1.3 / Created: 07/19/18 11:51am -->
 
 <head>
 	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
@@ -46,7 +46,7 @@
 		/* -- INDEX SETTINGS ---------------------------------------------------------------------------
 		 *
 		 *
-		 *	Documentation is here: https://confluence.ff0000.com/display/AT/INDEX
+		 *	API Documentation is here: https://ff0000-ad-tech.github.io/ad-docs/
 		 *
 		 *
 		 *
@@ -68,7 +68,7 @@
 				version: {
 					major: 0,
 					minor: 1,
-					patch: 2
+					patch: 3
 				},
 			};
 		/*-- Red.Settings.ad_params.end --*/
@@ -205,6 +205,10 @@
 inject('https://ae.nflximg.net/monet/scripts/custom-element.js')
 /*-- Red.Requester.netflix_custom_element_polyfill.end --*/ 
 
+/*-- Red.Requester.monet_integrator.start --*/
+inject('../node_modules/@netflixadseng/wc-monet-integrator/bundle/monet-integrator.min.js')
+/*-- Red.Requester.monet_integrator.end --*/
+
 /*-- Red.Requester.netflix_preloader.start --*/ 
 inject('../node_modules/@netflixadseng/wc-netflix-preloader/NetflixPreloaderComponent.min.js')
 /*-- Red.Requester.netflix_preloader.end --*/ 
@@ -258,7 +262,6 @@ var netflixPreloader
 				/*-- Red.Network.onload.end --*/
 
 				netflixPreloader = document.createElement('netflix-preloader')
-				netflixPreloader.id = 'netflix-preloader'
 				netflixPreloader.setAttribute('width', adParams.adWidth)
 				netflixPreloader.setAttribute('height', adParams.adHeight)
 				netflixPreloader.setAttribute('bg-color', assets.preloader.backgroundColor)
@@ -341,87 +344,32 @@ var netflixPreloader
 
 		}
 
-			function logMonetClick(targetId, event) {
-				Monet.logEvent('CLICK', {
-					src: targetId,
-					coords: {
-						"x": event.mouse.global.x,
-						"y": event.mouse.global.y
-					}
-				});
-			}
-
-
-		/* -- GLOBAL UTILITIES --------------------------------------------
-		 *
-		 *
-		 */
-		function getDeployProfile(id) {
-			for (var i = 0; i < environments.length; i++) {
-				if (environments[i].id === id) return environments[i]
-			}
-			return false
+		function logMonetClick(targetId, event) {
+			Monet.logEvent('CLICK', {
+				src: targetId,
+				coords: {
+					"x": event.mouse.global.x,
+					"y": event.mouse.global.y
+				}
+			});
 		}
 
-		function getQueryParams() {
-			var queryParams = {}
-			var query = window.location.href.split('?')
-			if (query.length > 1) {
-				var params = query[1].split('&')
-				for (var i in params) {
-					var keyValue = params[i].split('=')
-					if (keyValue.length == 2)
-						queryParams[keyValue[0]] = decodeURIComponent(keyValue[1])
-				}
-			}
-			return queryParams
+		function jsBundleLoadComplete() {
+			console.log('Index.jsBundleLoadComplete()')
+			View.monetIntegrator = document.createElement('monet-integrator')
+			View.monetIntegrator.addEventListener('ready', function (event) {
+				Control.handleMonetLoadComplete(this)
+			})
+			document.getElementById('main').appendChild(View.monetIntegrator)
 		}
 
-		function matchProtocolTo(_url) {
-			var noProtocol = _url.search(/^\/\//) > -1
-			if (_url.search(/^http/) > -1 || noProtocol) {
-				var _secure = window.location.href.search(/^https/) > -1 || adParams.forceHttps
-				var _httpProtocol = _secure ? 'https://' : 'http://'
-				if (noProtocol) {
-					_url = _url.replace(/^\/\//, _httpProtocol)
-				}
-				if (_url.search(/.*edgecastcdn/) > -1) {
-					var _edgecastContext = _secure ? 'ne1.' + _url.match(/w(a|p)c/i)[0] + '.' : _url.match(/w(a|p)c\.[a-z0-9]*\./i)[0]
-					_url = _httpProtocol + _edgecastContext + 'edgecastcdn' + _url.replace(/.*edgecastcdn/, '')
-				}
-				else if (_url.search(/.*paramount\.com/) > -1) {
-					var _paramountContext = _secure ? 'paramountdlds-a.akamaihd.net' : 'downloads.paramount.com'
-					_url = _httpProtocol + _paramountContext + _url.replace(/.*paramount\.com/, '')
-				}
-				else if (_url.search(/espn\.go\.com/) > -1 || _url.search(/secure\.espncdn\.com/) > -1) {
-					_url = 'https://secure.espncdn.com' + _url.replace(/^.*\.com/, '')
-				}
-				else {
-					_url = _url.replace(/^https?\:\/\//i, _httpProtocol)
-				}
-			}
-			return _url
-		}
 
-		// check version against
-		function isVersionOrNewer(version) {
-			const semver = version.split('.').map(function (v) { return parseInt(v) })
-			if (adParams.version.major > semver[0]) {
-				return true
-			} else if (adParams.version.major === semver[0]) {
-				if (adParams.version.minor > semver[1]) {
-					return true
-				} else if (adParams.version.minor > semver[1]) {
-					if (adParams.version.patch >= semver[2]) {
-						return true
-					}
-				}
-			}
-			return false
-		}
+		// ad-global bundle
+		/*-- Red.Inject.ad-global.start --*/
+		/*-- Red.Inject.ad-global.end --*/
 	</script>
 
-	<!-- commons bundle -->
+	<!-- ad-load bundle -->
 	<script type="text/javascript">
 			/*-- Red.Inject.commons.start --*/
 			/*-- Red.Inject.commons.end --*/
@@ -433,7 +381,7 @@ var netflixPreloader
 			/*-- Red.Inject.inline_entry.end --*/
 	</script>
 
-	<!-- build bundle -->
+	<!-- initial bundle -->
 	<script type="text/javascript">
 			/*-- Red.Inject.initial_entry.start --*/
 			/*-- Red.Inject.initial_entry.end --*/
