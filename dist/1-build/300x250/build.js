@@ -15,7 +15,6 @@ import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISv
 import '@size/images/default_300x250.jpg'
 import { MonetUtils } from 'ad-utils'
 
-
 /* -- CONTROL ----------------------------------------------------------------------------------------------------
  *
  *	API Docs are here: https://ff0000-ad-tech.github.io/ad-docs/
@@ -36,7 +35,7 @@ window.Control = new function() {
 				this.prepareBuild()
 			})
 			.catch(err => {
-				throw(err)
+				throw err
 			})
 	}
 
@@ -45,26 +44,19 @@ window.Control = new function() {
 		console.log('Control.prepareBuild()')
 		Control.preMarkup()
 
-
 		View.main = new Main()
 		View.intro = new Intro()
 		View.endFrame = new EndFrame()
 		View.trailerFrame = new TrailerFrame()
 		View.ribbon = new NetflixRibbon()
 		View.mainBorder = new MainBorder()
-
-
-
-
-
 	}
 
 	this.preMarkup = function() {
 		console.log('Control.preMarkup()')
-		
+
 		View.netflixFonts = document.createElement('netflix-fonts')
 		Markup.get('main').appendChild(View.netflixFonts)
-
 	}
 
 	this.postMarkup = function() {
@@ -72,20 +64,18 @@ window.Control = new function() {
 		Gesture.add(View.endFrame, GestureEvent.CLICK, Control.handleClick)
 		Gesture.add(View.trailerFrame.bg, GestureEvent.CLICK, Control.handleTrailerFrameClick)
 
-
-
 		View.endFrame.hide()
-		
-		Gesture.add(View.endFrame, GestureEvent.OVER, function(){
+
+		Gesture.add(View.endFrame, GestureEvent.OVER, function() {
 			View.endFrame.cta.mouseover()
 		})
-		Gesture.add(View.endFrame, GestureEvent.OUT, function(){
+		Gesture.add(View.endFrame, GestureEvent.OUT, function() {
 			View.endFrame.cta.mouseout()
 		})
-		Gesture.add(View.trailerFrame.bg, GestureEvent.OVER, function(){
+		Gesture.add(View.trailerFrame.bg, GestureEvent.OVER, function() {
 			View.trailerFrame.cta.mouseover()
 		})
-		Gesture.add(View.trailerFrame.bg, GestureEvent.OUT, function(){
+		Gesture.add(View.trailerFrame.bg, GestureEvent.OUT, function() {
 			View.trailerFrame.cta.mouseout()
 		})
 		View.trailerFrame.hide()
@@ -95,26 +85,16 @@ window.Control = new function() {
 		View.ribbon.addEventListener('coverComplete', function(event) {
 			Animation.playIntro()
 		})
-
-
 	}
 
 	// IMPORTANT!!! If this method has content, Call this function when your animation is complete!
 	this.animationComplete = function() {
 		console.log('Control.animationComplete()')
-
 	}
 
-	this.handleClick = function(event) {	
-
-		Network.exit( 
-			overridePlatformExit, 
-			MonetUtils.getDataByKey('Exit_URL')
-		); 
+	this.handleClick = function(event) {
+		Network.exit(overridePlatformExit, MonetUtils.getDataByKey('Exit_URL'))
 	}
-
-
-
 
 	this.handleMonetLoadComplete = function(element) {
 		console.log('Control.handleMonetLoadComplete()')
@@ -133,18 +113,18 @@ window.Control = new function() {
 				global.failAd()
 			})
 	}
-	
-	this.postMarkupStyling = function(){
+
+	this.postMarkupStyling = function() {
 		Styles.setCss(View.endFrame.pedigree, {
 			color: '#ffffff',
 			fontFamily: 'Netflix Sans'
-		});
+		})
 		Align.set(View.endFrame.pedigree, {
 			x: Align.CENTER,
 			y: {
 				type: Align.CENTER,
 				offset: 12
-			}	
+			}
 		})
 
 		View.intro.netflixLogo.progress(1)
@@ -152,12 +132,12 @@ window.Control = new function() {
 		Align.set(View.intro.netflixLogo, {
 			x: {
 				type: Align.LEFT,
-				offset: 12					
+				offset: 12
 			},
 			y: {
 				type: Align.BOTTOM,
-				offset: -11,
-			}	
+				offset: -11
+			}
 		})
 
 		Align.set(View.endFrame.cta, {
@@ -185,31 +165,28 @@ window.Control = new function() {
 		Align.set(View.endFrame.netflixLogo, {
 			x: {
 				type: Align.LEFT,
-				offset: 12					
+				offset: 12
 			},
 			y: {
 				type: Align.BOTTOM,
-				offset: -11,
-			}	
+				offset: -11
+			}
 		})
 
 		Align.set(View.trailerFrame.netflixLogo, {
 			x: {
 				type: Align.LEFT,
-				offset: 12					
+				offset: 12
 			},
 			y: {
 				type: Align.BOTTOM,
-				offset: -11,
-			}	
+				offset: -11
+			}
 		})
-
-
 	}
-	
+
 	this.handleIntroVideoComplete = function(event) {
 		Animation.showEndFrame()
-
 	}
 
 	this.handleIntroClick = function(event) {
@@ -217,15 +194,13 @@ window.Control = new function() {
 		Animation.showEndFrame()
 		Control.handleClick()
 	}
-	
+
 	this.handleTrailerFrameClick = function(event) {
 		console.log('Control.handleTrailerFrameClick()')
 		Animation.hideTrailerFrame()
 		Control.handleClick(event)
 	}
-
-
-}
+}()
 
 /* -- VIEW ------------------------------------------------------------------------------------------------------
  *
@@ -247,26 +222,24 @@ function Main() {
 		userSelect: 'none'
 	})
 
-Styles.setCss(T, { backgroundColor:'#ffffff' });
-
+	Styles.setCss(T, { backgroundColor: '#ffffff' })
 
 	return T
 }
 
-
 // ==============================================================================================================
-function Intro(){
+function Intro() {
 	var T = new UIComponent({
-		id : 'intro-container',
-		target : View.main,
-		css : {
-			width : 'inherit',
-			height : 'inherit'
+		id: 'intro-container',
+		target: View.main,
+		css: {
+			width: 'inherit',
+			height: 'inherit'
 		}
 	})
 
 	T.introVideoPlayer = document.createElement('netflix-video')
-	T.introVideoPlayer.id = "intro-video"
+	T.introVideoPlayer.id = 'intro-video'
 	T.introVideoPlayer.setAttribute('width', adParams.adWidth)
 	T.introVideoPlayer.setAttribute('height', adParams.adHeight)
 	T.introVideoPlayer.setAttribute('close-color-1', adData.colors.red)
@@ -281,21 +254,18 @@ function Intro(){
 
 	T.netflixLogo = document.createElement('netflix-brand-logo')
 	T.appendChild(T.netflixLogo)
-		
-		
-
 
 	return T
 }
 
 // ==============================================================================================================
-function EndFrame(){
+function EndFrame() {
 	var T = new UIComponent({
-		id : 'end-frame-container',
-		target : View.main,
-		css : {
-			width : 'inherit',
-			height : 'inherit'
+		id: 'end-frame-container',
+		target: View.main,
+		css: {
+			width: 'inherit',
+			height: 'inherit'
 		}
 	})
 
@@ -307,11 +277,10 @@ function EndFrame(){
 	T.pedigree = document.createElement('netflix-text')
 	T.pedigree.setAttribute('data-dynamic-key', 'Pedigree')
 	T.appendChild(T.pedigree)
-	
+
 	T.netflixLogo = document.createElement('netflix-brand-logo')
 	T.appendChild(T.netflixLogo)
-		
-		
+
 	T.playBtn = new UIButton({
 		id: 'cicle-play-btn',
 		target: T,
@@ -328,18 +297,18 @@ function EndFrame(){
 					height: 24
 				},
 				align: Align.CENTER
-			}),
+			})
 		],
 		onClick: Animation.showTrailerFrame,
 		onOver: function() {
-			TweenLite.set('.play_btn_svg_circle', { fill: adData.colors.white });
-			TweenLite.set('.play_btn_svg_arrow', { fill: adData.colors.red });
+			TweenLite.set('.play_btn_svg_circle', { fill: adData.colors.white })
+			TweenLite.set('.play_btn_svg_arrow', { fill: adData.colors.red })
 		},
 		onOut: function() {
-			TweenLite.set('.play_btn_svg_circle', { fill: adData.colors.red });
-			TweenLite.set('.play_btn_svg_arrow', { fill: adData.colors.white });
-		}			
-	})	
+			TweenLite.set('.play_btn_svg_circle', { fill: adData.colors.red })
+			TweenLite.set('.play_btn_svg_arrow', { fill: adData.colors.white })
+		}
+	})
 
 	T.cta = document.createElement('netflix-cta')
 	T.cta.setAttribute('data-dynamic-key', 'CTA')
@@ -347,28 +316,25 @@ function EndFrame(){
 	T.cta.setAttribute('border', '')
 	T.appendChild(T.cta)
 
-
-
 	return T
 }
 
-
 // ==============================================================================================================
-function TrailerFrame(){		
-	var T = new UIComponent ({
+function TrailerFrame() {
+	var T = new UIComponent({
 		id: 'trailer-frame',
 		target: View.main,
 		css: {
 			width: adParams.adWidth,
-			height: adParams.adHeight,
+			height: adParams.adHeight
 		}
 	})
 
-	T.hide = function(){
-		TweenLite.set( T, { y: -adParams.adHeight } )
+	T.hide = function() {
+		TweenLite.set(T, { y: -adParams.adHeight })
 	}
 
-	T.bg = new UIComponent ({
+	T.bg = new UIComponent({
 		id: 'trailer-frame-bg',
 		target: T,
 		css: {
@@ -379,19 +345,19 @@ function TrailerFrame(){
 		align: Align.BOTTOM
 	})
 
-	T.mainVideoPlayer = document.createElement('netflix-video');
-	T.mainVideoPlayer.id = "main-video";
+	T.mainVideoPlayer = document.createElement('netflix-video')
+	T.mainVideoPlayer.id = 'main-video'
 	T.mainVideoPlayer.setAttribute('width', 300)
 	T.mainVideoPlayer.setAttribute('height', 200)
-	T.mainVideoPlayer.setAttribute('color-1', adData.colors.red);
-	T.mainVideoPlayer.setAttribute('color-2', adData.colors.white);
-	T.mainVideoPlayer.setAttribute('close-color-1', adData.colors.red);
-	T.mainVideoPlayer.setAttribute('close-color-2', adData.colors.white);
+	T.mainVideoPlayer.setAttribute('color-1', adData.colors.red)
+	T.mainVideoPlayer.setAttribute('color-2', adData.colors.white)
+	T.mainVideoPlayer.setAttribute('close-color-1', adData.colors.red)
+	T.mainVideoPlayer.setAttribute('close-color-2', adData.colors.white)
 	T.mainVideoPlayer.setAttribute('data-dynamic-key', 'Trailer')
-	T.mainVideoPlayer.setAttribute('controls', '');
-	T.mainVideoPlayer.addEventListener('video-click', Control.handleTrailerFrameClick);
-	T.appendChild(T.mainVideoPlayer);
-	
+	T.mainVideoPlayer.setAttribute('controls', '')
+	T.mainVideoPlayer.addEventListener('video-click', Control.handleTrailerFrameClick)
+	T.appendChild(T.mainVideoPlayer)
+
 	T.cta = document.createElement('netflix-cta')
 	T.cta.setAttribute('data-dynamic-key', 'CTA')
 	T.cta.setAttribute('arrow', '')
@@ -400,9 +366,6 @@ function TrailerFrame(){
 
 	T.netflixLogo = document.createElement('netflix-brand-logo')
 	T.appendChild(T.netflixLogo)
-		
-		
-
 
 	return T
 }
@@ -417,17 +380,14 @@ function NetflixRibbon() {
 	return T
 }
 
-
 // ==============================================================================================================
-function MainBorder(){
+function MainBorder() {
 	new UIBorder({
-		target : View.main,
-		size : 1,
-		color : '#000000'
+		target: View.main,
+		size: 1,
+		color: '#000000'
 	})
 }
-
-
 
 /* -- ANIMATION -------------------------------------------------------------------------------------------------
  *
@@ -440,43 +400,38 @@ window.Animation = new function() {
 
 		// show the main container
 		global.removePreloader()
-		Styles.setCss(View.main, {opacity: 1})
+		Styles.setCss(View.main, { opacity: 1 })
 
 		View.ribbon.play()
-
 	}
 
-	this.playIntro = function(){
+	this.playIntro = function() {
 		if (Device.type == 'desktop') {
-			Styles.setCss(View.intro.netflixLogo,{ opacity:1 })
+			Styles.setCss(View.intro.netflixLogo, { opacity: 1 })
 			View.intro.introVideoPlayer.play()
 
-			TweenLite.delayedCall(2.5, function(){
+			TweenLite.delayedCall(2.5, function() {
 				View.intro.netflixLogo.reverse()
 			})
-			TweenLite.delayedCall(6, function(){
+			TweenLite.delayedCall(6, function() {
 				View.intro.netflixLogo.play()
 			})
-			TweenLite.to(View.intro.netflixLogo, .25, { delay:8, alpha:0 })
+			TweenLite.to(View.intro.netflixLogo, 0.25, { delay: 8, alpha: 0 })
 		} else {
 			Animation.showEndFrame()
 		}
 	}
 
-	
 	this.showEndFrame = function() {
 		console.log('Animation.showEndFrame()')
-		
+
 		View.intro.hide()
 		View.endFrame.show()
-
-
 	}
 
-	
-	this.hideTrailerFrame = function(){
+	this.hideTrailerFrame = function() {
 		var fsElement = FullScreen.isFullScreen()
-		var hasFullScreenVideo = (fsElement && fsElement.tagName === 'VIDEO')
+		var hasFullScreenVideo = fsElement && fsElement.tagName === 'VIDEO'
 		// iOS safari doesn't have fullscreen info under document
 		var trailerVideo = Markup.get('<video>', View.trailerFrame.mainVideoPlayer)[0]
 
@@ -484,17 +439,15 @@ window.Animation = new function() {
 		if (hasFullScreenVideo || trailerVideo.webkitDisplayingFullscreen) {
 			return
 		}
-		TweenLite.to( View.trailerFrame, 1, { y:-adParams.adHeight, ease:Expo.easeInOut })
-		TweenLite.to( View.endFrame, 1, { y:0, ease:Expo.easeInOut })
+		TweenLite.to(View.trailerFrame, 1, { y: -adParams.adHeight, ease: Expo.easeInOut })
+		TweenLite.to(View.endFrame, 1, { y: 0, ease: Expo.easeInOut })
 		View.trailerFrame.mainVideoPlayer.pause()
 		Animation.showEndFrame()
 	}
 
-	this.showTrailerFrame = function(){
-		TweenLite.to( View.trailerFrame, 1, { y:0, ease:Expo.easeOut })
-		TweenLite.to( View.endFrame, 1, { y:175, ease:Expo.easeOut })
+	this.showTrailerFrame = function() {
+		TweenLite.to(View.trailerFrame, 1, { y: 0, ease: Expo.easeOut })
+		TweenLite.to(View.endFrame, 1, { y: 175, ease: Expo.easeOut })
 		View.trailerFrame.mainVideoPlayer.play()
 	}
-
-
-}
+}()
