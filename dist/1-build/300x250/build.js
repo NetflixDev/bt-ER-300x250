@@ -1,4 +1,4 @@
-/* BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / AdApp: 3.1.0 / AdHtml: v0.1.3 / Created: 07/19/18 11:51am */
+/* BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / @ff0000-ad-tech/tmpl-build-sources: 1.0.1 / Created: 10/02/18 10:48am */
 import '@netflixadseng/wc-netflix-brand-logo'
 import '@netflixadseng/wc-netflix-cta'
 import '@netflixadseng/wc-netflix-text'
