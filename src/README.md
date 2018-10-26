@@ -152,7 +152,7 @@ Dynamic Targets are defined by duplicating `1-build/[size]/index.html`. The new 
 
 ![Index Targets](https://github.com/ff0000-ad-tech/readme-assets/blob/master/tmpl-standard-base/index-targets.png)
 
-To ES6 import from an index-specific scope in your build, use the Webpack alias: `@index`. During compile, if no folder matching the current index-target is found, `@index` will default to the main index scope.
+By additionally creating a folder with the same name, you can import assets specific to that index. Then ES6 import the asset with the Webpack alias: `@index`. During compile, if no folder matching the current index-target is found, `@index` will default to the main index scope.
 
 ```javascript
 // for example in Ad.js
@@ -187,7 +187,7 @@ The following JS modules are initially set up as common across sizes:
 
 Sharing code drastically reduces the footprint of a build, but it requires more data management & logic to deal with the differences. It can get abstract quickly.
 
-You can also move entire modules to `1-build/[size]/js`. Import accordingly, thereby making the module size-specific. Downside here: Code redundancy between sizes. But, it can be more straightforward to comprehend.
+To flatten, you can move entire modules to `1-build/[size]/js`. Then import using the `@size` alias, thereby making the module size-specific. Downside here: Code redundancy between sizes. But, it can be more straightforward to comprehend.
 
 Both strategies have their place. It is up to you and your needs.
 
