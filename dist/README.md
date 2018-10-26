@@ -7,6 +7,12 @@
 
 [Getting Started](#getting-started)
 
+[Authoring](#authoring)
+
+[Publishing](#traffic)
+
+[Plugins](#plugins)
+
 [FAT Framework](#fat-framework)
 
 [Ad Networks](#ad-networks)
@@ -23,7 +29,7 @@ The output is bundled, per-size, per-index into concise IAB-compatible packages:
 
 ![Sample Output](https://github.com/ff0000-ad-tech/readme-assets/blob/master/tmpl-standard-base/sample-output.png)
 
-Your job is to build the creative using your ES6/Javascript/Html/CSS abilities. Please see the [authoring](#author) section for more info.
+Your job is to build the creative using your ES6/Javascript/Html/CSS abilities. Please see the [authoring](#authoring) section for more info.
 
 <a name="getting-started"></a>
 
