@@ -253,7 +253,7 @@ The dropdown lists [Plugins](#plugins) that can be used on the selected set of a
 
 Plugins are declared as dependencies in the top `./package.json`. Once installed, they will appear in Creative Server in various places, depending on their function.
 
-![Plugins](https://github.com/ff0000-ad-tech/readme-assets/blob/master/tmpl-standard-base/bulk-control.png)
+![Plugins](https://github.com/ff0000-ad-tech/readme-assets/blob/master/tmpl-standard-base/plugins.png)
 
 Several plugins are installed by default that simplify publishing:
 
