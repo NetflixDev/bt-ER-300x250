@@ -287,7 +287,12 @@ TODO: Write guides for building standard layouts.
 
 ## Ad Networks
 
-This template is configured for DCM (Doubleclick Campaign Manager). Other templates for DC Studio, Flashtalking, and Sizmek are available -- check out this project for a complete library: [tmpl-build-sources](https://github.com/ff0000-ad-tech/tmpl-build-sources).
+<!-- Red.Component.networks.start -->
+This template is a rich-media unit, configured for the Netflix Monet CMP, which is built on GMP (Google Marketing Platform, aka DoubleClick Studio).
+
+<!-- Red.Component.networks.end -->
+
+Other templates for Velvet, DC Studio, Flashtalking, and Sizmek are available -- check out this project for a complete library: [tmpl-build-sources](https://github.com/ff0000-ad-tech/tmpl-build-sources).
 
 As much as possible, we have tried to isolate Network interfacing to the `index.html`, so that creative is easily ported from one template-type to another.
 
