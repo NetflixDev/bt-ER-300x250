@@ -1,6 +1,6 @@
 {
   "name": "bt-ES6-Webpack-Intro-Endframe-Branded",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "C20/Monet-compatible templates that use  https://github.com/ff0000-ad-tech/ad-docs/blob/master/README.md",
   "scripts": {
     "c20": "node lib/api.js --cmd track && node lib/api.js --cmd publish"
@@ -33,10 +33,10 @@
     "type": "build_templates",
     "context": "RED Interactive",
     "state": "published",
-    "updated": 1538502698468,
+    "updated": 1540512402228,
     "username": "GitHub",
     "full_name": "NetflixAdsEng/bt-ES6-Webpack-Intro-Endframe-Branded",
     "html_url": "https://github.com/NetflixAdsEng/bt-ES6-Webpack-Intro-Endframe-Branded",
-    "version": "2.0.0"
+    "version": "2.1.0"
   }
 }
