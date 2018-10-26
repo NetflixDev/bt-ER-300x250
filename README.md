@@ -12,6 +12,6 @@ The top level of this project is for Container 2.0 scaffolding only, and it shou
 
 ### Starting a New Unit
 
-For an overview of how to install & work with this template, please start with the [./dist/README.md].
+For an overview of how to install & work with this template, please start with the [./dist/README.md](./dist/README.md).
 
 You may also reach RED via our [GitHub organization](https://github.com/ff0000-ad-tech), Container 2.0 Slack channel, `c20support`, or `monet-developers` email aliases at `netflix.com`.
