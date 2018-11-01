@@ -9,9 +9,9 @@
 	"license": "MIT",
 	"dependencies": {
 		"@netflixadseng/pk-component-utils": "^3.0.0",	
-		"@netflixadseng/wc-netflix-preloader": "^4.0.0",
+		"@netflixadseng/wc-netflix-preloader": "^4.1.0",
 		"@netflixadseng/wc-netflix-cta": "^4.0.0",
-		"@netflixadseng/wc-monet-integrator": "^4.0.0",
+		"@netflixadseng/wc-monet-integrator": "^4.1.0",
 		"@netflixadseng/wc-netflix-video": "^4.0.0",
 		"@netflixadseng/wc-netflix-flushed-ribbon": "^4.0.0",
 		"@netflixadseng/wc-netflix-brand-logo": "^4.0.0",

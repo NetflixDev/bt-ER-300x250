@@ -10,7 +10,7 @@ module.exports = {
   "type": "build_templates",
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1541014345967,
+  "updated": 1541111231886,
   "username": "GitHub",
   "full_name": "NetflixAdsEng/bt-ES6-Webpack-Intro-Endframe-Branded",
   "html_url": "https://github.com/NetflixAdsEng/bt-ES6-Webpack-Intro-Endframe-Branded",
