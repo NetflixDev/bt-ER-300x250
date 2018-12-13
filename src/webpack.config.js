@@ -266,6 +266,7 @@ module.exports = config => {
 			'ad-load': 'adLoad'
 		},
 		resolve: {
+			mainFields: ['module', 'main', 'browser'],
 			alias: Object.assign(
 				{
 					AdData: path.resolve(__dirname, `${DM.deploy.get().source.context}/common/js/AdData`),
