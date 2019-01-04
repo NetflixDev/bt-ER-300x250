@@ -5,51 +5,36 @@ import { Animation } from '@common/js/Animation.js'
 import '@netflixadseng/wc-netflix-fonts'
 import { MonetUtils } from 'ad-utils'
 
-
 export class Control {
 	static preMarkup() {
 		console.log('Control.preMarkup()')
-View.netflixFonts = document.createElement('netflix-fonts')
-Markup.get('main').appendChild(View.netflixFonts)
-
-
+		View.netflixFonts = document.createElement('netflix-fonts')
+		Markup.get('main').appendChild(View.netflixFonts)
 	}
 
 	static postMarkup() {
 		console.log('Control.postMarkup()')
-// listen for default exit
-Gesture.add(View.endFrame, GestureEvent.CLICK, Control.handleClick)
-
-
+		// listen for default exit
+		Gesture.add(View.endFrame, GestureEvent.CLICK, Control.handleClick)
 
 		View.endFrame.hide()
-		
-Gesture.add(View.endFrame, GestureEvent.OVER, function() {
-	View.endFrame.cta.mouseover()
-})
-Gesture.add(View.endFrame, GestureEvent.OUT, function() {
-	View.endFrame.cta.mouseout()
-})
 
-View.ribbon.addEventListener('coverComplete', function(event) {
-	event.stopImmediatePropagation() // this event was coming through twice
-	Animation.playIntro()
-})
+		Gesture.add(View.endFrame, GestureEvent.OVER, function() {
+			View.endFrame.cta.mouseover()
+		})
+		Gesture.add(View.endFrame, GestureEvent.OUT, function() {
+			View.endFrame.cta.mouseout()
+		})
 
-
+		View.ribbon.addEventListener('coverComplete', function(event) {
+			event.stopImmediatePropagation() // this event was coming through twice
+			Animation.playIntro()
+		})
 	}
 
-
-	static handleClick(event) {	
-
-		Network.exit( 
-			overridePlatformExit, 
-			MonetUtils.getDataByKey('Exit_URL')
-		); 
+	static handleClick(event) {
+		Network.exit(overridePlatformExit, MonetUtils.getDataByKey('Exit_URL'))
 	}
-
-
-
 
 	static handleMonetLoadComplete(element) {
 		console.log('Control.handleMonetLoadComplete()')
@@ -57,37 +42,34 @@ View.ribbon.addEventListener('coverComplete', function(event) {
 			.then(data => {
 				console.log('	-> All Netflix web components ready')
 				// monet data is now assigned to MonetUtils
-adData.hasFTM = MonetUtils.getDataByKey('FTM')
-adData.hasTuneIn = MonetUtils.getDataByKey('Tune_In')
+				adData.hasFTM = MonetUtils.getDataByKey('FTM')
+				adData.hasTuneIn = MonetUtils.getDataByKey('Tune_In')
 
-// Ratings Bug
-adData.hasRatings = MonetUtils.getDataByKey('Ratings_Bug_20x20')
+				// Ratings Bug
+				adData.hasRatings = MonetUtils.getDataByKey('Ratings_Bug_20x20')
 
-// if any Dynamic images must be loaded from monet
-// but referenced outside a monet component (CanvasImage, UIImage), follow this pattern
-//
-// adData.ratingsSrc = ImageManager.addToLoad(MonetUtils.getDataByKey('Ratings_Bug_20x20'), { forCanvas: false })
-//
+				// if any Dynamic images must be loaded from monet
+				// but referenced outside a monet component (CanvasImage, UIImage), follow this pattern
+				//
+				// adData.ratingsSrc = ImageManager.addToLoad(MonetUtils.getDataByKey('Ratings_Bug_20x20'), { forCanvas: false })
+				//
 
-// proceed with ad AFTER the setData() Promise has been fulfilled
-ImageManager.load(function() {
-	if (View.intro) View.intro.postMarkupStyling()
-	View.endFrame.postMarkupStyling()
-	Control.postMarkup()
-	Animation.start()
-})
-
-
+				// proceed with ad AFTER the setData() Promise has been fulfilled
+				ImageManager.load(function() {
+					if (View.intro) View.intro.postMarkupStyling()
+					View.endFrame.postMarkupStyling()
+					Control.postMarkup()
+					Animation.start()
+				})
 			})
 			.catch(err => {
 				console.log(err)
 				global.failAd()
 			})
 	}
-	
+
 	static handleIntroVideoComplete(event) {
 		Animation.showEndFrame()
-
 	}
 
 	static handleIntroClick(event) {
@@ -95,6 +77,4 @@ ImageManager.load(function() {
 		Animation.showEndFrame()
 		Control.handleClick()
 	}
-	
-
 }

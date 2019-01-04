@@ -33,7 +33,6 @@ export class Preflight {
 		})
 	}
 
-
 	static addPreloadedImages() {
 		console.log('Preflight.addPreloadedImages()')
 		ImageManager.addToDictionary(assets.preloadedImages)
@@ -41,7 +40,6 @@ export class Preflight {
 
 	static prepareAdData() {
 		console.log('Preflight.prepareAdData()')
-
 
 		global.adData = new AdData()
 	}

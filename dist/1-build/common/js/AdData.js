@@ -1,6 +1,5 @@
 import { ImageManager } from 'ad-control'
 
-
 export default function AdData() {
 	var self = this
 
@@ -19,25 +18,17 @@ export default function AdData() {
 		self.theImageName = ImageManager.addToLoad(adParams.imagesPath + 'sample.jpg');
 	 */
 
-
 	self.fonts = {
 		primary: 'template_font'
-
-
 	}
 
 	self.colors = {
 		white: '#F5F5F1',
 		grey: '#221F1F',
 		red: '#E50914',
-		black: '#000000',
-
+		black: '#000000'
 	}
 
 	// Store svg markup for use in all UISvg instances, reduces duplicate code across builds.  See UISvg.
-	self.svg = {
-
-	}
-
-
+	self.svg = {}
 }

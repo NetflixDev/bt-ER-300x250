@@ -12,7 +12,7 @@
 	"author": "RED Interactive Agency",
 	"license": "MIT",
 	"dependencies": {
-		"@netflixadseng/pk-component-utils": "^3.1.0",	
+		"@netflixadseng/pk-component-utils": "^3.1.0",
 		"@netflixadseng/wc-netflix-preloader": "^4.1.0",
 		"@netflixadseng/wc-netflix-cta": "^5.0.0",
 		"@netflixadseng/wc-monet-integrator": "^5.0.0",
@@ -31,7 +31,7 @@
 		"@ff0000-ad-tech/ad-events": "^1.2.0",
 		"@ff0000-ad-tech/ad-external": "^3.0.1",
 		"@ff0000-ad-tech/ad-geom": "^1.1.1",
-		"@ff0000-ad-tech/ad-global": "^2.0.1",
+		"@ff0000-ad-tech/ad-global": "^2.2.0",
 		"@ff0000-ad-tech/ad-load": "^2.0.0",
 		"@ff0000-ad-tech/ad-particles": "^2.0.0",
 		"@ff0000-ad-tech/ad-polyfills": "^1.1.0",

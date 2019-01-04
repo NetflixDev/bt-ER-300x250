@@ -5,7 +5,6 @@ import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import { Device } from 'ad-external'
 
-
 export class Ad {
 	// called from index.html onImpression()
 	static launch(fbaContent) {
@@ -23,26 +22,17 @@ export class Ad {
 		console.log('Ad.prepare()')
 		Control.preMarkup()
 
-
 		View.main = new Main()
-if (Device.type === 'desktop') View.intro = new Intro({ target: View.main })
-View.endFrame = new EndFrame({ target: View.main })
+		if (Device.type === 'desktop') View.intro = new Intro({ target: View.main })
+		View.endFrame = new EndFrame({ target: View.main })
 
 		View.ribbon = new NetflixRibbon()
-View.mainBorder = new MainBorder()
-
-
-
-
-
-
+		View.mainBorder = new MainBorder()
 	}
 
-static initMonet(element) {
-	console.log('Ad.initMonet()')
-	Control.handleMonetLoadComplete(element)
-}
-
-
+	static initMonet(element) {
+		console.log('Ad.initMonet()')
+		Control.handleMonetLoadComplete(element)
+	}
 }
 window.Ad = Ad
