@@ -23,10 +23,8 @@ export class Ad {
 		Control.preMarkup()
 
 		View.main = new Main()
-		if (Device.type === 'desktop') View.intro = new Intro({ target: View.main })
 		View.endFrame = new EndFrame({ target: View.main })
 
-		View.ribbon = new NetflixRibbon()
 		View.mainBorder = new MainBorder()
 	}
 

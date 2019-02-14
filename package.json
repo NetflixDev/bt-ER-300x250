@@ -1,5 +1,5 @@
 {
-  "name": "bt-Endframe-Resolve",
+  "name": "@NetflixDev/bt-Endframe-Resolve",
   "version": "2.2.1",
   "description": "C20/Monet-compatible templates that use  https://github.com/ff0000-ad-tech/ad-docs/blob/master/README.md",
   "scripts": {
@@ -36,10 +36,10 @@
     "creative": "./3-traffic/default/300x250/creative.js",
     "context": "RED Interactive",
     "state": "published",
-    "updated": 1550166547135,
+    "updated": 1550167147793,
     "username": "GitHub",
-    "full_name": "NetflixAdsEng/bt-Endframe-Resolve",
-    "html_url": "https://github.com/NetflixAdsEng/bt-Endframe-Resolve",
+    "full_name": "NetflixDev/bt-Endframe-Resolve",
+    "html_url": "https://github.com/NetflixDev/bt-Endframe-Resolve",
     "version": "2.2.1"
   }
 }

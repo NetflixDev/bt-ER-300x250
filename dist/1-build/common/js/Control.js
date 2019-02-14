@@ -25,11 +25,6 @@ export class Control {
 		Gesture.add(View.endFrame, GestureEvent.OUT, function() {
 			View.endFrame.cta.mouseout()
 		})
-
-		View.ribbon.addEventListener('coverComplete', function(event) {
-			event.stopImmediatePropagation() // this event was coming through twice
-			Animation.playIntro()
-		})
 	}
 
 	static handleClick(event) {
@@ -56,7 +51,6 @@ export class Control {
 
 				// proceed with ad AFTER the setData() Promise has been fulfilled
 				ImageManager.load(function() {
-					if (View.intro) View.intro.postMarkupStyling()
 					View.endFrame.postMarkupStyling()
 					Control.postMarkup()
 					Animation.start()
@@ -66,15 +60,5 @@ export class Control {
 				console.log(err)
 				global.failAd()
 			})
-	}
-
-	static handleIntroVideoComplete(event) {
-		Animation.showEndFrame()
-	}
-
-	static handleIntroClick(event) {
-		View.intro.hide()
-		Animation.showEndFrame()
-		Control.handleClick()
 	}
 }

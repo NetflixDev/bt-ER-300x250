@@ -6,8 +6,7 @@ export class Animation {
 		// show the main container
 		global.removePreloader()
 		Styles.setCss(View.main, { opacity: 1 })
-
-		View.ribbon.play()
+		Animation.playIntro()
 	}
 
 	// IMPORTANT!!! Call this function when your animation is complete!
@@ -16,20 +15,7 @@ export class Animation {
 	}
 
 	static playIntro() {
-		if (View.intro) {
-			Styles.setCss(View.intro.netflixLogo, { opacity: 1 })
-			View.intro.introVideoPlayer.play()
-
-			TweenLite.delayedCall(2.5, function() {
-				View.intro.netflixLogo.reverse()
-			})
-			TweenLite.delayedCall(6, function() {
-				View.intro.netflixLogo.play()
-			})
-			TweenLite.to(View.intro.netflixLogo, 0.25, { delay: 8, alpha: 0 })
-		} else {
-			Animation.showEndFrame()
-		}
+		Animation.showEndFrame()
 	}
 
 	static showEndFrame() {
@@ -38,14 +24,7 @@ export class Animation {
 		if (View.intro) View.intro.hide()
 		View.endFrame.show()
 
-		let delay = 0
-		TweenLite.from(View.endFrame.tuneIn, 0.5, { alpha: 0, delay: delay })
-		TweenLite.from(View.endFrame.ftm, 0.5, { alpha: 0, delay: delay })
-		TweenLite.from(View.endFrame.netflixLogo, 0.5, { alpha: 0, delay: delay })
-		TweenLite.from(View.endFrame.cta, 0.5, { alpha: 0, delay: delay })
-
-		TweenLite.delayedCall(delay, function() {
-			View.endFrame.netflixLogo.play()
-		})
+		const creative = new Creative()
+		creative.play()
 	}
 }

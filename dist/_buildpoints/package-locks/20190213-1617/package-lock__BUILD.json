@@ -84,9 +84,9 @@
 			}
 		},
 		"@ff0000-ad-tech/ad-entry": {
-			"version": "1.8.1",
-			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-entry/-/ad-entry-1.8.1.tgz",
-			"integrity": "sha512-c2FvcVCjf0dwfDHcca+lKzT8O6VyXnFjgI9hwUtMjIH4tQpVZsyERXYeyFXZj25o8JMF/72u1KT57aUbc1B2Lw=="
+			"version": "1.6.0",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-entry/-/ad-entry-1.6.0.tgz",
+			"integrity": "sha512-bazdM6bgmucllO1YrHYStJRzUs4qlW3Tr+B2Wjk0aHcXdOyC+gQvJj1wrt8y9foHGrWEgb4aY728ZQLvfOWhHw=="
 		},
 		"@ff0000-ad-tech/ad-events": {
 			"version": "1.2.0",
@@ -103,7 +103,7 @@
 			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-external/-/ad-external-3.1.0.tgz",
 			"integrity": "sha512-MDeIfwy1mkOMjwh7B+S+MiIICNCpwdXfTldCeR1hVacu0SMKY3jfvHjiuAhWtifjPW8SPahrDyPAmAWfSvHUHA==",
 			"requires": {
-				"@ff0000-ad-tech/ad-dates": "^4.1.1",
+				"@ff0000-ad-tech/ad-dates": "latest",
 				"@ff0000-ad-tech/ad-legacy": "^1.0.1",
 				"@ff0000-ad-tech/ad-load": "^2.1.0",
 				"@ff0000-ad-tech/ad-utils": "^2.0.0"
@@ -225,13 +225,13 @@
 			}
 		},
 		"@ff0000-ad-tech/ad-velvet": {
-			"version": "3.2.3",
-			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-velvet/-/ad-velvet-3.2.3.tgz",
-			"integrity": "sha512-Aj2fZ9TEtuKx+AKB3Dwvm5/vLUUwbC0d7HcHCj+s+2wnv9w8uwT3gISTR7hXsP+q0KbZWitnG4lhmMnNm+PeWQ==",
+			"version": "3.2.1",
+			"resolved": "https://registry.npmjs.org/@ff0000-ad-tech/ad-velvet/-/ad-velvet-3.2.1.tgz",
+			"integrity": "sha512-Fn3HOX9F8OGEiFM2BucyIOStTRebrZxxYBy/hxCxvcU7lbWn5De451YYfWVDQoSb01VDqmyE3pkbpAxocqSzMQ==",
 			"requires": {
 				"@ff0000-ad-tech/ad-canvas": "^1.1.6",
 				"@ff0000-ad-tech/ad-control": "^3.1.0",
-				"@ff0000-ad-tech/ad-dates": "^4.1.1",
+				"@ff0000-ad-tech/ad-dates": "latest",
 				"@ff0000-ad-tech/ad-events": "^1.1.3",
 				"@ff0000-ad-tech/ad-external": "^3.0.1",
 				"@ff0000-ad-tech/ad-global": "^2.0.1",
@@ -304,14 +304,14 @@
 			}
 		},
 		"@netflixadseng/pk-component-utils": {
-			"version": "3.2.0",
-			"resolved": "https://registry.npmjs.org/@netflixadseng/pk-component-utils/-/pk-component-utils-3.2.0.tgz",
-			"integrity": "sha512-Y5SJWjCEQ0UW4W7chr3d1X6dwLXQM3kGAyxuaQ65ueXSLdopaiCcdA3JP8+pdow3yeVtY/cJgVJnfqklV3ySLw=="
+			"version": "3.1.0",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/pk-component-utils/-/pk-component-utils-3.1.0.tgz",
+			"integrity": "sha512-bZ8BpgF2P5kgiUhU86x2cHAINGHyogfV3xeqKOiMpV7NMxYKiKo1J73dxHuSU6vSEseTh4rZ8XEm7SgqgNwiZg=="
 		},
 		"@netflixadseng/wc-monet-integrator": {
-			"version": "5.1.0",
-			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-monet-integrator/-/wc-monet-integrator-5.1.0.tgz",
-			"integrity": "sha512-p0LL40/mEV69Zv5eh829qd6TvFjNZULIw+njXyhiYnvQ5DaMampUM2X9o6C/8YBvUn4lq6Yal+U8eR37GZ+i8g==",
+			"version": "5.0.0",
+			"resolved": "https://registry.npmjs.org/@netflixadseng/wc-monet-integrator/-/wc-monet-integrator-5.0.0.tgz",
+			"integrity": "sha512-DymnLog7GQyzQvzlqc2ewsE7EdnQwdvDSuvA9b69LYtnvS77weifTBSuDFOVDNUiEpgs050dsIYt75vmyQ7O9Q==",
 			"requires": {
 				"@netflixadseng/pk-component-utils": "^3.1.0"
 			}
@@ -363,9 +363,9 @@
 			"integrity": "sha512-TvZvsd2+71OeWt263zz6tKSQy5K12LH1KDKR7ekesx0cQK5TaekX10Ujfn060CrYqUbUBmwguIg2h4NUtRLO2w=="
 		},
 		"core-js": {
-			"version": "2.6.4",
-			"resolved": "https://registry.npmjs.org/core-js/-/core-js-2.6.4.tgz",
-			"integrity": "sha512-05qQ5hXShcqGkPZpXEFLIpxayZscVD2kuMBZewxiIPPEagukO4mqgPA9CWhUvFBJfy3ODdK2p9xyHh7FTU9/7A=="
+			"version": "2.6.1",
+			"resolved": "https://registry.npmjs.org/core-js/-/core-js-2.6.1.tgz",
+			"integrity": "sha512-L72mmmEayPJBejKIWe2pYtGis5r0tQ5NaJekdhyXgeMQTpJoBsH0NL4ElY2LfSoV15xeQWKQ+XTTOZdyero5Xg=="
 		},
 		"fontfaceobserver-es": {
 			"version": "3.2.0",

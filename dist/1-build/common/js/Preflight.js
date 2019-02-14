@@ -17,6 +17,7 @@ export class Preflight {
 		return new Promise((resolve, reject) => {
 			let promises = [
 				// this.loadDynamicJS('define-your-case-id')
+				this.loadCreativeJs()
 			]
 
 			Promise.all(promises)
@@ -42,6 +43,20 @@ export class Preflight {
 		console.log('Preflight.prepareAdData()')
 
 		global.adData = new AdData()
+	}
+
+	static loadCreativeJs() {
+		console.log('Preflight.loadCreativeJs()')
+		return new Promise((resolve, reject) => {
+			new Loader('creative.js', {
+				onFail: () => {
+					reject(new Error('Unable to load creative.js'))
+				},
+				onComplete: () => {
+					resolve()
+				}
+			}).load()
+		})
 	}
 
 	/**
