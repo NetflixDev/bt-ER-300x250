@@ -14,7 +14,7 @@ module.exports = {
   "creative": "./3-traffic/default/300x250/creative.js",
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1550167955306,
+  "updated": 1550171274024,
   "username": "GitHub",
   "full_name": "NetflixDev/bt-Endframe-Resolve",
   "html_url": "https://github.com/NetflixDev/bt-Endframe-Resolve",
