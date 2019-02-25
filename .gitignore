@@ -1,8 +1,5 @@
+node_modules
 !dist/1-build/node_modules
-./node_modules
-dist/node_modules
-src/node_modules
-src/1-build/node_modules
 
 bower_components/
 log.txt
