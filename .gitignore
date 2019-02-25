@@ -1,0 +1,6 @@
+!dist/1-build/node_modules
+node_modules
+bower_components/
+log.txt
+.DS_Store
+*.pyc
