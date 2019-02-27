@@ -1,0 +1,11 @@
+node_modules
+!dist/1-build/node_modules/
+!dist/1-build/node_modules/@netflixadseng/
+
+
+
+bower_components/
+log.txt
+.DS_Store
+*.pyc
+
