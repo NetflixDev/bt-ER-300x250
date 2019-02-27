@@ -1,7 +1,7 @@
 node_modules
 !dist/1-build/node_modules/
 dist/1-build/node_modules/*
-!dist/1-build/node_modules/@netflixadseng/
+!dist/1-build/node_modules/@netflixadseng
 
 
 
