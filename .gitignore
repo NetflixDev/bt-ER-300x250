@@ -1,5 +1,6 @@
 node_modules
-!dist/1-build/node_modules
+![a-z0-9]*-[a-z0-9]*-[a-z0-9]*-[a-z0-9]*-[a-z0-9]*.js
+
 
 bower_components/
 log.txt
