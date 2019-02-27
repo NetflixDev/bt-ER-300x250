@@ -1,6 +1,7 @@
 node_modules
 !dist/1-build/node_modules
-@ff0000-ad-tech
+dist/1-build/node_modules/*
+!@netflixadseng
 
 
 
