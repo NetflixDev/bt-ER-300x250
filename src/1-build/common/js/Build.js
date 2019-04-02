@@ -4,7 +4,6 @@ import '@netflixadseng/wc-netflix-text'
 import '@netflixadseng/wc-netflix-img'
 import { Styles, Markup, Align, Effects } from 'ad-view'
 import { ImageManager } from 'ad-control'
-import '@size/images/keyart.jpg'
 import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import '@netflixadseng/wc-netflix-flushed-ribbon'
@@ -40,11 +39,10 @@ export function EndFrame(arg) {
 	}
 	const T = new UIComponent(ObjectUtils.defaults(arg, base, true))
 
-	T.keyart = new UIImage({
-		id: 'keyart',
-		target: T,
-		source: 'keyart'
-	})
+	T.keyart = document.createElement('netflix-img')
+	T.keyart.setAttribute('data-dynamic-key', 'Keyart')
+	T.keyart.setAttribute('width', adParams.adWidth)
+	T.appendChild(T.keyart)
 
 	T.pedigree = new UITextField({
 		target: T,
