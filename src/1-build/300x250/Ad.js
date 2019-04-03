@@ -4,6 +4,7 @@ import { EndFrame, Main, Intro, NetflixRibbon, MainBorder } from '@common/js/Bui
 import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import { Device } from 'ad-external'
+import { LEFT_STACKED, RIGHT_STACKED } from '@common/js/Build.js'
 
 export class Ad {
 	// called from index.html onImpression()
@@ -23,7 +24,7 @@ export class Ad {
 		Control.preMarkup()
 
 		View.main = new Main()
-		View.endFrame = new EndFrame({ target: View.main })
+		View.endFrame = new EndFrame({ target: View.main, layout: LEFT_STACKED })
 
 		View.mainBorder = new MainBorder()
 	}

@@ -13,7 +13,7 @@
     "text.Tune_In": {
       "type": "text",
       "id": "Tune_In",
-      "text": "New episodes<br>now streaming"
+      "text": "Tune In"
     },
     "text.FTM": {
       "type": "text",
