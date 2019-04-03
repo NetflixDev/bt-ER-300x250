@@ -10,6 +10,7 @@ import '@netflixadseng/wc-netflix-flushed-ribbon'
 import '@netflixadseng/wc-netflix-video'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
+import CanvasIris from '@common/js/CanvasIris'
 
 export function Main() {
 	var T = Markup.get('main')
@@ -95,6 +96,13 @@ export function EndFrame(arg) {
 	T.ratingsBug.setAttribute('id', 'ratings_bug')
 	T.ratingsBug.setAttribute('width', 20)
 	T.appendChild(T.ratingsBug)
+
+	T.iris =
+		window.Creative &&
+		Creative.usesCanvasIris &&
+		new CanvasIris({
+			target: T
+		})
 
 	T.postMarkupStyling = function() {
 		let T = View.endFrame
