@@ -40,7 +40,7 @@ export default class CanvasIris {
 			colors: [{ stopVal: 0, color: 'rgba(0, 0, 0, 1)' }, { stopVal: 1, color: 'rgba(0, 0, 0, 0)' }]
 		})
 
-		T.irisCircle = new CanvasCircle({
+		T.circle = new CanvasCircle({
 			target: _irisSource,
 			params: {
 				radius: _irisSource.width / 2,
