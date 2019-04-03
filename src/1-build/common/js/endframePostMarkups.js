@@ -230,12 +230,13 @@ export function rightStackedPostMarkup() {
 		Styles.setCss(T.ftm, {
 			color: '#fff',
 			fontSize: 14,
-			letterSpacing: 1
+			letterSpacing: 1,
+			textAlign: 'right'
 		})
 		Align.set(T.ftm, {
 			x: {
-				type: Align.LEFT,
-				against: 16
+				type: Align.RIGHT,
+				offset: -16
 			},
 			y: {
 				type: Align.BOTTOM,
@@ -248,12 +249,13 @@ export function rightStackedPostMarkup() {
 		Styles.setCss(T.tuneIn, {
 			color: '#fff',
 			fontSize: 16,
-			letterSpacing: 1
+			letterSpacing: 1,
+			textAlign: 'right'
 		})
 		Align.set(T.tuneIn, {
 			x: {
-				type: Align.LEFT,
-				against: 16
+				type: Align.RIGHT,
+				offset: -16
 			},
 			y: {
 				type: Align.BOTTOM,
@@ -266,8 +268,8 @@ export function rightStackedPostMarkup() {
 	// logo
 	Align.set(T.netflixLogo, {
 		x: {
-			type: Align.LEFT,
-			offset: 16
+			type: Align.RIGHT,
+			offset: -16
 		},
 		y: {
 			type: Align.TOP,
@@ -279,8 +281,8 @@ export function rightStackedPostMarkup() {
 	T.cta.resize()
 	Align.set(T.cta, {
 		x: {
-			type: Align.LEFT,
-			offset: 16
+			type: Align.RIGHT,
+			offset: -16
 		},
 		y: {
 			type: Align.TOP,
