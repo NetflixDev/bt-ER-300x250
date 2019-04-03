@@ -101,7 +101,8 @@ export function EndFrame(arg) {
 		window.Creative &&
 		Creative.usesCanvasIris &&
 		new CanvasIris({
-			target: T
+			target: T,
+			irisColor: Creative.irisColor
 		})
 
 	T.postMarkupStyling = function() {
