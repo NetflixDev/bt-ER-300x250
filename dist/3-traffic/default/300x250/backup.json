@@ -13,7 +13,7 @@
     "text.Tune_In": {
       "type": "text",
       "id": "Tune_In",
-      "text": "New episodes<br>now streaming"
+      "text": "Tune In"
     },
     "text.FTM": {
       "type": "text",
@@ -39,17 +39,6 @@
       "type": "url",
       "id": "Exit_URL_Desktop",
       "url": "https://www.netflix.com/"
-    },
-    "video.Supercut": {
-      "type": "video",
-      "id": "Supercut",
-      "url": "http://ae.nflximg.net/monet/video/fpo/1x1.mp4",
-      "videoType": "SUPERCUT"
-    },
-    "bool.Toggle_Supercut": {
-      "type": "bool",
-      "id": "Toggle_Supercut",
-      "value": true
     },
     "image.Ratings_Bug_20x20": {
       "type": "image",
