@@ -24,7 +24,7 @@ export class Ad {
 		Control.preMarkup()
 
 		View.main = new Main()
-		View.endFrame = new EndFrame({ target: View.main })
+		View.endFrame = new EndFrame({ target: View.main, layout: RIGHT_STACKED })
 
 		View.mainBorder = new MainBorder()
 	}
