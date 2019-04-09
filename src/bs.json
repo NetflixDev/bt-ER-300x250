@@ -1,0 +1,24 @@
+{
+  "name": "src",
+  "build_size": "300x250",
+  "build_source": {
+    "build_source_path": "./c20-builder/"
+  },
+  "build_source_options": {
+    "stub_paths": []
+  },
+  "output": "/Users/derek.miranda/Internal/c20/bt-ER-300x250",
+  "filters": {
+    "top": [
+      "./bs.json",
+      "./_buildpoints"
+    ],
+    "build": [
+      "300x250/_c20-tracker/8c417243-849b-4868-8eb9-91063e2f3d80.js"
+    ]
+  },
+  "id": "Container 2.0 - Builder Templates",
+  "bsid": "a203e5a3-d313-4997-adcd-fc4bb45b7fc1",
+  "processing": false,
+  "error": false
+}
