@@ -14,7 +14,7 @@ module.exports = {
   "creative": "./3-traffic/default/300x250",
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1554403592843,
+  "updated": 1555023361661,
   "username": "GitHub",
   "full_name": "NetflixDev/bt-ER-300x250-right-stacked",
   "html_url": "https://github.com/NetflixDev/bt-ER-300x250-right-stacked",
