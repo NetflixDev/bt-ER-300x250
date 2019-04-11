@@ -8,13 +8,9 @@ import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import '@netflixadseng/wc-netflix-flushed-ribbon'
 import '@netflixadseng/wc-netflix-video'
+import CanvasIris from '@common/js/CanvasIris.js'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
-import CanvasIris from '@common/js/CanvasIris.js'
-import { centerPostMarkup, leftStackedPostMarkup, rightStackedPostMarkup } from '@common/js/endframePostMarkups'
-
-export const LEFT_STACKED = 'LEFT_STACKED'
-export const RIGHT_STACKED = 'RIGHT_STACKED'
 
 export function Main() {
 	var T = Markup.get('main')
@@ -34,6 +30,20 @@ export function Main() {
 }
 
 // ==============================================================================================================
+export function Intro(arg) {
+	const base = {
+		id: 'intro-container',
+		css: {
+			width: 'inherit',
+			height: 'inherit'
+		}
+	}
+	const T = new UIComponent(ObjectUtils.defaults(arg, base, true))
+
+	return T
+}
+
+// ==============================================================================================================
 export function EndFrame(arg) {
 	const base = {
 		id: 'end-frame-container',
@@ -43,7 +53,6 @@ export function EndFrame(arg) {
 		}
 	}
 	const T = new UIComponent(ObjectUtils.defaults(arg, base, true))
-	const isStacked = arg.layout && arg.layout.indexOf('STACKED') >= 0
 
 	T.keyart = document.createElement('netflix-img')
 	T.keyart.setAttribute('data-dynamic-key', 'Keyart')
@@ -81,16 +90,9 @@ export function EndFrame(arg) {
 	T.tuneIn.setAttribute('data-dynamic-key', 'Tune_In')
 	T.appendChild(T.tuneIn)
 
-	let ctaLogoWidth = 90,
-		ctaHeight = 24
-	if (isStacked) {
-		ctaLogoWidth = 75
-		ctaHeight = 20
-	}
-
 	// logo
 	T.netflixLogo = document.createElement('netflix-brand-logo')
-	T.netflixLogo.setAttribute('width', ctaLogoWidth)
+	T.netflixLogo.setAttribute('width', 75)
 	T.appendChild(T.netflixLogo)
 
 	// cta
@@ -98,18 +100,19 @@ export function EndFrame(arg) {
 	T.cta.setAttribute('data-dynamic-key', 'CTA')
 	T.cta.setAttribute('arrow', '')
 	T.cta.setAttribute('border', '')
-	T.cta.setAttribute('width', ctaLogoWidth)
-	T.cta.setAttribute('height', ctaHeight)
-
-	if (isStacked) {
-		T.cta.setAttribute('min-font-size', 7)
-
-		if (arg.layout === RIGHT_STACKED) {
-			T.cta.setAttribute('stretch-origin', 'right')
-		}
-	}
-
+	T.cta.setAttribute('width', 75)
+	T.cta.setAttribute('height', 20)
+	T.cta.setAttribute('min-font-size', 7)
+	T.cta.setAttribute('stretch-origin', 'right')
 	T.appendChild(T.cta)
+
+	/* if (isStacked) {
+	T.cta.setAttribute('min-font-size', 7)
+
+	if (arg.layout === RIGHT_STACKED) {
+		T.cta.setAttribute('stretch-origin', 'right')
+	}
+} */
 
 	// ratings bug
 	T.ratingsBug = document.createElement('netflix-img')
@@ -126,14 +129,106 @@ export function EndFrame(arg) {
 			irisColor: Creative.irisColor
 		})
 
-	T.postMarkupStyling = centerPostMarkup
-	switch (arg.layout) {
-		case LEFT_STACKED:
-			T.postMarkupStyling = leftStackedPostMarkup
-			break
-		case RIGHT_STACKED:
-			T.postMarkupStyling = rightStackedPostMarkup
-			break
+	T.postMarkupStyling = function rightStackedPostMarkup() {
+		let T = View.endFrame
+
+		// title treatment
+		Align.set(T.tt, {
+			x: Align.CENTER,
+			y: Align.CENTER
+		})
+
+		Align.set(T.pedigree, {
+			x: {
+				type: Align.CENTER,
+				against: T.tt
+			},
+			y: {
+				type: Align.CENTER,
+				against: 55
+			}
+		})
+
+		if (adData.hasFTM) {
+			// free trial messaging
+			Styles.setCss(T.ftm, {
+				color: '#fff',
+				fontSize: 14,
+				letterSpacing: 1,
+				textAlign: 'right'
+			})
+			Align.set(T.ftm, {
+				x: {
+					type: Align.RIGHT,
+					offset: -16
+				},
+				y: {
+					type: Align.BOTTOM,
+					offset: -76
+				}
+			})
+			T.removeChild(T.tuneIn)
+		} else {
+			// tune-in
+			Styles.setCss(T.tuneIn, {
+				color: '#fff',
+				fontSize: 16,
+				letterSpacing: 1,
+				textAlign: 'right'
+			})
+			Align.set(T.tuneIn, {
+				x: {
+					type: Align.RIGHT,
+					offset: -16
+				},
+				y: {
+					type: Align.BOTTOM,
+					offset: -76
+				}
+			})
+			T.removeChild(T.ftm)
+		}
+
+		// logo
+		Align.set(T.netflixLogo, {
+			x: {
+				type: Align.RIGHT,
+				offset: -16
+			},
+			y: {
+				type: Align.TOP,
+				offset: 213
+			}
+		})
+
+		// cta
+		T.cta.resize()
+		Align.set(T.cta, {
+			x: {
+				type: Align.RIGHT,
+				offset: -16
+			},
+			y: {
+				type: Align.TOP,
+				offset: 182
+			}
+		})
+
+		// ratings bug
+		if (adData.hasRatings) {
+			Align.set(T.ratingsBug, {
+				x: {
+					type: Align.RIGHT,
+					offset: -5
+				},
+				y: {
+					type: Align.BOTTOM,
+					offset: -5
+				}
+			})
+		} else {
+			T.removeChild(T.ratingsBug)
+		}
 	}
 
 	return T
