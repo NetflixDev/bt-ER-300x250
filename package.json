@@ -1,5 +1,5 @@
 {
-  "name": "@NetflixDev/bt-ER-300x250",
+  "name": "@NetflixDev/bt-ER-300x250-centered",
   "version": "2.2.1",
   "description": "C20/Monet-compatible templates that use  https://github.com/ff0000-ad-tech/ad-docs/blob/master/README.md",
   "scripts": {
