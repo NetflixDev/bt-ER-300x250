@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- BUILD SOURCE: Netflix Monet - Intro/Endframe Branded / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 1.0.2 / Created: 01/04/19 11:25am -->
+<!-- BUILD SOURCE: Container 2.0 - 300x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 1.1.0 / Created: 04/10/19 05:15pm -->
 
 <head>
 	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
@@ -67,8 +67,8 @@
 				},
 				version: {
 					major: 1,
-					minor: 0,
-					patch: 2
+					minor: 1,
+					patch: 0
 				},
 			};
 		/*-- Red.Settings.ad_params.end --*/
@@ -178,10 +178,6 @@ Ad.launch(fbaContent)
 	<script type="text/javascript">
 		/*-- Red.Inject.promise_polyfill.start --*/
 		/*-- Red.Inject.promise_polyfill.end --*/
-
-/*-- Red.Requester.netflix_custom_element_polyfill.start --*/ 
-inject('https://ae.nflximg.net/monet/scripts/custom-element.js')
-/*-- Red.Requester.netflix_custom_element_polyfill.end --*/ 
 
 /*-- Red.Requester.monet_integrator.start --*/
 inject('../node_modules/@netflixadseng/wc-monet-integrator/package.json')
@@ -335,9 +331,6 @@ function logMonetClick(targetId, event) {
 function jsBundleLoadComplete() {
 	console.log('Index.jsBundleLoadComplete()')
 	View.monetIntegrator = document.createElement('monet-integrator')
-	View.monetIntegrator.addEventListener('ready', function(event) {
-		Ad.initMonet(this)
-	})
 	document.getElementById('main').appendChild(View.monetIntegrator)
 }
 
