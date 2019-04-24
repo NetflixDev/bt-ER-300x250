@@ -14,4 +14,4 @@ var Creative = function() {
 	}
 }
 
-Creative.layout = 'ONE_LINE_1'
+Creative.layout = 'SIDE_BY_SIDE_1'

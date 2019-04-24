@@ -8,7 +8,8 @@ import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import '@netflixadseng/wc-netflix-flushed-ribbon'
 import '@netflixadseng/wc-netflix-video'
-import CanvasIris from '@common/js/CanvasIris.js'
+import { sideBySideInit, cornerInit, oneLineInit } from './EndFrame/inits'
+import { sideBySidePostMarkup, cornerLeftPostMarkup, cornerRightPostMarkup, oneLinePostMarkup } from './EndFrame/postmarkups'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
 
@@ -54,182 +55,41 @@ export function EndFrame(arg) {
 	}
 	const T = new UIComponent(ObjectUtils.defaults(arg, base, true))
 
-	T.keyart = document.createElement('netflix-img')
-	T.keyart.setAttribute('data-dynamic-key', 'Keyart')
-	T.keyart.setAttribute('width', adParams.adWidth)
-	T.appendChild(T.keyart)
-
-	T.pedigree = new UITextField({
-		target: T,
-		id: 'pedigree',
-		css: {
-			width: 200,
-			height: 50
-		},
-		fontSize: 16,
-		fontFamily: 'Netflix Sans',
-		format: TextFormat.INLINE_FIT_CLAMP,
-		alignText: Align.CENTER,
-		spacing: -0.2,
-		text: 'A NETFLIX FILM'
-	})
-
-	// title treatment
-	T.tt = document.createElement('netflix-img')
-	T.tt.setAttribute('data-dynamic-key', 'Title_Treatment')
-	T.tt.setAttribute('width', 300)
-	T.appendChild(T.tt)
-
-	// free trial messaging
-	T.ftm = document.createElement('netflix-text')
-	T.ftm.setAttribute('data-dynamic-key', 'FTM')
-	T.appendChild(T.ftm)
-
-	// tune-in
-	T.tuneIn = document.createElement('netflix-text')
-	T.tuneIn.setAttribute('data-dynamic-key', 'Tune_In')
-	T.appendChild(T.tuneIn)
-
-	// logo
-	T.netflixLogo = document.createElement('netflix-brand-logo')
-	T.netflixLogo.setAttribute('width', 75)
-	T.appendChild(T.netflixLogo)
-
-	// cta
-	T.cta = document.createElement('netflix-cta')
-	T.cta.setAttribute('data-dynamic-key', 'CTA')
-	T.cta.setAttribute('arrow', '')
-	T.cta.setAttribute('border', '')
-	T.cta.setAttribute('width', 75)
-	T.cta.setAttribute('height', 20)
-	T.cta.setAttribute('min-font-size', 7)
-	T.cta.setAttribute('stretch-origin', 'right')
-	T.appendChild(T.cta)
-
-	/* if (isStacked) {
-	T.cta.setAttribute('min-font-size', 7)
-
-	if (arg.layout === RIGHT_STACKED) {
-		T.cta.setAttribute('stretch-origin', 'right')
+	let endFrameInit = sideBySideInit
+	switch (arg.layout) {
+		// these use the default init function
+		case 'SIDE_BY_SIDE_1':
+		case 'SIDE_BY_SIDE_2':
+			break
+		case 'CORNER_LEFT':
+		case 'CORNER_RIGHT':
+			endFrameInit = cornerInit
+			break
+		case 'ONE_LINE_1':
+		case 'ONE_LINE_2':
+			endFrameInit = oneLineInit
+			break
 	}
-} */
+	endFrameInit(T)
 
-	// ratings bug
-	T.ratingsBug = document.createElement('netflix-img')
-	T.ratingsBug.setAttribute('data-dynamic-key', 'Ratings_Bug_20x20')
-	T.ratingsBug.setAttribute('id', 'ratings_bug')
-	T.ratingsBug.setAttribute('width', 20)
-	T.appendChild(T.ratingsBug)
-
-	T.iris =
-		window.Creative &&
-		Creative.usesCanvasIris &&
-		new CanvasIris({
-			target: T,
-			irisColor: Creative.irisColor
-		})
-
-	T.postMarkupStyling = function rightStackedPostMarkup() {
-		let T = View.endFrame
-
-		// title treatment
-		Align.set(T.tt, {
-			x: Align.CENTER,
-			y: Align.CENTER
-		})
-
-		Align.set(T.pedigree, {
-			x: {
-				type: Align.CENTER,
-				against: T.tt
-			},
-			y: {
-				type: Align.CENTER,
-				against: 55
-			}
-		})
-
-		if (adData.hasFTM) {
-			// free trial messaging
-			Styles.setCss(T.ftm, {
-				color: '#fff',
-				fontSize: 14,
-				letterSpacing: 1,
-				textAlign: 'right'
-			})
-			Align.set(T.ftm, {
-				x: {
-					type: Align.RIGHT,
-					offset: -16
-				},
-				y: {
-					type: Align.BOTTOM,
-					offset: -76
-				}
-			})
-			T.removeChild(T.tuneIn)
-		} else {
-			// tune-in
-			Styles.setCss(T.tuneIn, {
-				color: '#fff',
-				fontSize: 16,
-				letterSpacing: 1,
-				textAlign: 'right'
-			})
-			Align.set(T.tuneIn, {
-				x: {
-					type: Align.RIGHT,
-					offset: -16
-				},
-				y: {
-					type: Align.BOTTOM,
-					offset: -76
-				}
-			})
-			T.removeChild(T.ftm)
-		}
-
-		// logo
-		Align.set(T.netflixLogo, {
-			x: {
-				type: Align.RIGHT,
-				offset: -16
-			},
-			y: {
-				type: Align.TOP,
-				offset: 213
-			}
-		})
-
-		// cta
-		T.cta.resize()
-		Align.set(T.cta, {
-			x: {
-				type: Align.RIGHT,
-				offset: -16
-			},
-			y: {
-				type: Align.TOP,
-				offset: 182
-			}
-		})
-
-		// ratings bug
-		if (adData.hasRatings) {
-			Align.set(T.ratingsBug, {
-				x: {
-					type: Align.RIGHT,
-					offset: -5
-				},
-				y: {
-					type: Align.BOTTOM,
-					offset: -5
-				}
-			})
-		} else {
-			T.removeChild(T.ratingsBug)
-		}
+	let postMarkup = sideBySidePostMarkup
+	switch (arg.layout) {
+		// these use the default postMarkupStyling
+		case 'SIDE_BY_SIDE_1':
+		case 'SIDE_BY_SIDE_2':
+			break
+		case 'CORNER_LEFT':
+			postMarkup = cornerLeftPostMarkup
+			break
+		case 'CORNER_RIGHT':
+			postMarkup = cornerRightPostMarkup
+			break
+		case 'ONE_LINE_1':
+		case 'ONE_LINE_2':
+			postMarkup = oneLinePostMarkup
+			break
 	}
+	T.postMarkupStyling = postMarkup
 
 	return T
 }
