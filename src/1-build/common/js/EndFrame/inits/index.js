@@ -9,18 +9,18 @@ import { ObjectUtils } from 'ad-utils'
 export { sideBySideInit, cornerInit, oneLineInit }
 
 function sideBySideInit(T) {
-	baseInit(T, { initCtaLogo: sideBySideCtaLogoInit })
+	baseInit(T, { ctaLogoInit: sideBySideCtaLogoInit })
 }
 
 function cornerInit(T) {
-	baseInit(T, { initCtaLogo: cornerCtaLogoInit })
+	baseInit(T, { ctaLogoInit: cornerCtaLogoInit })
 }
 
 function oneLineInit(T) {
-	baseInit(T, { initCtaLogo: oneLineCtaLogoInit })
+	baseInit(T, { ctaLogoInit: oneLineCtaLogoInit })
 }
 
-function baseInit(T, { initCtaLogo = sideBySideCtaLogoInit }) {
+function baseInit(T, { ctaLogoInit = sideBySideCtaLogoInit }) {
 	T.keyart = document.createElement('netflix-img')
 	T.keyart.setAttribute('data-dynamic-key', 'Keyart')
 	T.keyart.setAttribute('width', adParams.adWidth)
@@ -58,7 +58,7 @@ function baseInit(T, { initCtaLogo = sideBySideCtaLogoInit }) {
 	T.appendChild(T.tuneIn)
 
 	// init CTA and logo
-	initCtaLogo(T)
+	ctaLogoInit(T)
 
 	// ratings bug
 	T.ratingsBug = document.createElement('netflix-img')
