@@ -35,7 +35,15 @@
 			"label": "300x250",
 			"tier": "endframe-resolve",
 			"size": "300x250",
-			"creative": "./3-traffic/default/300x250"
+      "creative": "./3-traffic/default/300x250",
+      "layouts": {
+        "SIDE_BY_SIDE_1": "Side By Side 1",
+        "SIDE_BY_SIDE_2": "Side By Side 2",
+        "CORNER_LEFT": "Corner Left",
+        "CORNER_RIGHT": "Corner Right",
+        "ONE_LINE_1": "One Line 1",
+        "ONE_LINE_2": "One Line 2"
+      }
 		},
     "context": "RED Interactive",
     "state": "published",
