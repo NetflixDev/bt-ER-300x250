@@ -13,3 +13,5 @@ var Creative = function() {
 		})
 	}
 }
+
+Creative.layout = 'ONE_LINE_1'
