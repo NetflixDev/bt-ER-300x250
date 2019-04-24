@@ -13,8 +13,6 @@ import { sideBySidePostMarkup, cornerLeftPostMarkup, cornerRightPostMarkup, oneL
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
 
-export const LAYOUTS = ['SIDE_BY_SIDE_1', 'SIDE_BY_SIDE_2', 'CORNER_LEFT', 'CORNER_RIGHT', 'ONE_LINE_1', 'ONE_LINE_2']
-
 export function Main() {
 	var T = Markup.get('main')
 	Styles.setCss(T, {
