@@ -12,7 +12,8 @@ module.exports = {
     "label": "300x250 NF Global Template",
     "tier": "endframe-resolve",
     "size": "300x250",
-    "creative": "./3-traffic/default/300x250",
+    "creative": "./dist/3-traffic/default/300x250",
+    "toolkit": "./toolkit/300x250_NF_Global_Template_ContainerRecycle_Layered.psd",
     "layouts": {
       "SIDE_BY_SIDE_1": "Side By Side 1",
       "SIDE_BY_SIDE_2": "Side By Side 2",
@@ -24,7 +25,7 @@ module.exports = {
   },
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1556237460749,
+  "updated": 1556238217995,
   "username": "GitHub",
   "full_name": "NetflixDev/bt-ER-300x250",
   "html_url": "https://github.com/NetflixDev/bt-ER-300x250",
