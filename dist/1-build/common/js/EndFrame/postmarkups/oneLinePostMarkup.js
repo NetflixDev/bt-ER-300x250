@@ -5,16 +5,14 @@ import { Control } from '@common/js/Control.js'
 import CanvasIris from '@common/js/CanvasIris.js'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg, UIGroup } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
+import { titleTreatmentLayout } from './shared.js'
 
 export default function oneLinePostMarkup() {
 	let T = View.endFrame
 	const oneLineLockupOffset = 11
 
 	// title treatment
-	Align.set(T.tt, {
-		x: Align.CENTER,
-		y: Align.CENTER
-	})
+	titleTreatmentLayout(T)
 
 	Align.set(T.pedigree, {
 		x: {
