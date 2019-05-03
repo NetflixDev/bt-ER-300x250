@@ -4,12 +4,12 @@ import '@netflixadseng/wc-netflix-text'
 import '@netflixadseng/wc-netflix-img'
 import { Styles, Markup, Align, Effects } from 'ad-view'
 import { ImageManager } from 'ad-control'
+import { cornerInit, sideBySideInit, oneLineInit } from './EndFrame/inits'
 import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import '@netflixadseng/wc-netflix-flushed-ribbon'
 import '@netflixadseng/wc-netflix-video'
-import { sideBySideInit, cornerInit, oneLineInit } from './EndFrame/inits'
-import { sideBySidePostMarkup, cornerLeftPostMarkup, cornerRightPostMarkup, oneLinePostMarkup } from './EndFrame/postmarkups'
+import { cornerRightPostMarkup, sideBySidePostMarkup, oneLinePostMarkup, cornerLeftPostMarkup } from './EndFrame/postmarkups'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
 
@@ -89,6 +89,7 @@ export function EndFrame(arg) {
 			postMarkup = oneLinePostMarkup
 			break
 	}
+
 	T.postMarkupStyling = postMarkup
 
 	return T
