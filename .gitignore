@@ -1,7 +1,4 @@
 node_modules
-!dist/1-build/node_modules
-dist/1-build/node_modules/*
-!@netflixadseng
 2-debug
 
 bower_components/
