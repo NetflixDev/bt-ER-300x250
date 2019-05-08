@@ -52,26 +52,28 @@ export class Control {
 				// check for title treatment url/path in Monet data
 				// if not provided, use default title treatment img for given layout
 				adData.hasTT = !!MonetUtils.getDataByKey('Title_Treatment')
-				if (!adData.hasTT) {
-					const layout = window.Creative && Creative.layout
-					let ttUrl
-					switch (layout) {
-						case 'SIDE_BY_SIDE_1':
-						case 'CORNER_LEFT':
-						case 'CORNER_RIGHT':
-						case 'ONE_LINE_1':
-						default:
-							ttUrl = 'title-treatments/tt-upper.png'
-							break
-						case 'SIDE_BY_SIDE_2':
-						case 'ONE_LINE_2':
-							ttUrl = 'title-treatments/tt-lower.png'
-							break
-					}
 
-					// load TT
-					adData.ttSrc = ImageManager.addToLoad(ttUrl)
+				const layout = window.Creative && Creative.layout
+				let ttUrl, ttCenter
+				switch (layout) {
+					case 'SIDE_BY_SIDE_1':
+					case 'CORNER_LEFT':
+					case 'CORNER_RIGHT':
+					case 'ONE_LINE_1':
+					default:
+						ttUrl = 'title-treatments/tt-upper.png'
+						ttCenter = { x: 150, y: 50 }
+						break
+					case 'SIDE_BY_SIDE_2':
+					case 'ONE_LINE_2':
+						ttUrl = 'title-treatments/tt-lower.png'
+						ttCenter = { x: 150, y: 130 }
+						break
 				}
+
+				// load TT
+				adData.ttSrc = ImageManager.addToLoad(ttUrl)
+				adData.ttCenter = ttCenter
 
 				// proceed with ad AFTER the setData() Promise has been fulfilled
 				ImageManager.load(function() {
