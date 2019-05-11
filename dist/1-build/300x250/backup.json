@@ -20,6 +20,11 @@
 			"id": "CTA",
 			"text": "WATCH NOW"
 		},
+		"text.FTM": {
+			"type": "text",
+			"id": "FTM",
+			"text": ""
+		},
 		"url.Exit_URL_iOS": {
 			"type": "url",
 			"id": "Exit_URL_iOS",
