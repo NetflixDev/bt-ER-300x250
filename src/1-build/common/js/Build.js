@@ -8,7 +8,6 @@ import { cornerInit, sideBySideInit, oneLineInit } from './EndFrame/inits'
 import { Animation } from '@common/js/Animation.js'
 import { Control } from '@common/js/Control.js'
 import '@netflixadseng/wc-netflix-flushed-ribbon'
-import '@netflixadseng/wc-netflix-video'
 import { cornerRightPostMarkup, sideBySidePostMarkup, oneLinePostMarkup, cornerLeftPostMarkup } from './EndFrame/postmarkups'
 import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISvg } from 'ad-ui'
 import { ObjectUtils } from 'ad-utils'
@@ -58,15 +57,13 @@ export function EndFrame(arg) {
 	let endFrameInit = sideBySideInit
 	switch (arg.layout) {
 		// these use the default init function
-		case 'SIDE_BY_SIDE_1':
-		case 'SIDE_BY_SIDE_2':
+		case 'SIDE_BY_SIDE':
 			break
 		case 'CORNER_LEFT':
 		case 'CORNER_RIGHT':
 			endFrameInit = cornerInit
 			break
-		case 'ONE_LINE_1':
-		case 'ONE_LINE_2':
+		case 'ONE_LINE':
 			endFrameInit = oneLineInit
 			break
 	}
@@ -75,8 +72,7 @@ export function EndFrame(arg) {
 	let postMarkup = sideBySidePostMarkup
 	switch (arg.layout) {
 		// these use the default postMarkupStyling
-		case 'SIDE_BY_SIDE_1':
-		case 'SIDE_BY_SIDE_2':
+		case 'SIDE_BY_SIDE':
 			break
 		case 'CORNER_LEFT':
 			postMarkup = cornerLeftPostMarkup
@@ -84,8 +80,7 @@ export function EndFrame(arg) {
 		case 'CORNER_RIGHT':
 			postMarkup = cornerRightPostMarkup
 			break
-		case 'ONE_LINE_1':
-		case 'ONE_LINE_2':
+		case 'ONE_LINE':
 			postMarkup = oneLinePostMarkup
 			break
 	}
