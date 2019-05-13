@@ -1,0 +1,60 @@
+{
+	"assets": {
+		"Background": {
+			"input": {
+				"visible": true,
+				"validation": "/.+/"
+			},
+			"labels": {
+				"toolTip": "Background image should match dimensions of the Container."
+			}
+		},
+		"Title_Treatment": {
+			"input": {
+				"visible": true,
+				"validation": "/.+/"
+			},
+			"labels": {
+				"toolTip": "Title Treatment image should be match dimensions of the Container. Use a transparent PNG."
+			}
+		},
+		"Tune_In": {
+			"input": {
+				"visible": true,
+				"validation": "/.*/"
+			},
+			"labels": {
+				"toolTip": ""
+			}
+		},
+		"CTA": {
+			"input": {
+				"visible": true,
+				"validation": "/.*/"
+			},
+			"labels": {
+				"toolTip": ""
+			}
+		},
+		"FTM": {
+			"input": {
+				"visible": false
+			}
+		},
+		"Exit_URL_iOS": {
+			"input": {
+				"visible": false
+			}
+		},
+		"Exit_URL_Android": {
+			"input": {
+				"visible": false
+			}
+		},
+		"Exit_URL_Desktop": {
+			"input": {
+				"visible": false
+			}
+		}
+	}
+}
