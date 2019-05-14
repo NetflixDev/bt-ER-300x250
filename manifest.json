@@ -18,13 +18,13 @@
 			"input": {
 				"state": "required",
 				"toolTip":
-					"Background image:<ul>Match dimensions of the Container</ul><ul>Do <b>not</b> include brand elements (Title, Logo, CTA, Tune-In)</ul>"
+					"Background image:<li><ul>Match dimensions of the Container</ul><ul>Do <b>not</b> include brand elements (Title, Logo, CTA, Tune-In)</ul></li>"
 			}
 		},
 		"Title_Treatment": {
 			"input": {
 				"state": "required",
-				"toolTip": "Title Treatment image:<ul>Match dimensions of the Container</ul><ul>Use a transparent PNG</ul>"
+				"toolTip": "Title Treatment image:<li><ul>Match dimensions of the Container</ul><ul>Use a transparent PNG</ul></li>"
 			}
 		},
 		"Tune_In": {
