@@ -17,13 +17,14 @@
 		"Background": {
 			"input": {
 				"state": "required",
-				"toolTip": "Background image should match dimensions of the Container."
+				"toolTip":
+					"Background image:<ul>Match dimensions of the Container</ul><ul>Do <b>not</b> include brand elements (Title, Logo, CTA, Tune-In)</ul>"
 			}
 		},
 		"Title_Treatment": {
 			"input": {
 				"state": "required",
-				"toolTip": "Title Treatment image should be match dimensions of the Container. Use a transparent PNG."
+				"toolTip": "Title Treatment image:<ul>Match dimensions of the Container</ul><ul>Use a transparent PNG</ul>"
 			}
 		},
 		"Tune_In": {
