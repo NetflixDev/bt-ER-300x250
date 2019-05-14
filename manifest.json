@@ -9,7 +9,7 @@
 			"toolTip": "Animation options determine how the ad resolves to endframe."
 		},
 		"failover": {
-			"state": "optional",
+			"state": "required",
 			"toolTip": "Failover image is a static jpeg, only used in cases when the ad fails to play."
 		}
 	},
