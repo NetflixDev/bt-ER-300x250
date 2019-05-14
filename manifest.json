@@ -2,58 +2,48 @@
 	"assets": {
 		"Background": {
 			"input": {
-				"visible": true,
-				"validation": "/.+/"
-			},
-			"labels": {
+				"state": "required",
 				"toolTip": "Background image should match dimensions of the Container."
 			}
 		},
 		"Title_Treatment": {
 			"input": {
-				"visible": true,
-				"validation": "/.+/"
-			},
-			"labels": {
+				"state": "required",
 				"toolTip": "Title Treatment image should be match dimensions of the Container. Use a transparent PNG."
 			}
 		},
 		"Tune_In": {
 			"input": {
-				"visible": true,
-				"validation": "/.*/"
-			},
-			"labels": {
-				"toolTip": ""
+				"state": "required",
+				"pattern": ".*",
+				"toolTip": "Tune-in text."
 			}
 		},
 		"CTA": {
 			"input": {
-				"visible": true,
-				"validation": "/.*/"
-			},
-			"labels": {
-				"toolTip": ""
+				"state": "required",
+				"pattern": ".*",
+				"toolTip": "Call-to-action text."
 			}
 		},
 		"FTM": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		},
 		"Exit_URL_iOS": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		},
 		"Exit_URL_Android": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		},
 		"Exit_URL_Desktop": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		}
 	}
