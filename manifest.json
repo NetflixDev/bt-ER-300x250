@@ -1,59 +1,69 @@
 {
+	"container": {
+		"lockup": {
+			"state": "optional",
+			"toolTip": "Lock-up options determine where the Netflix Logo, CTA, and Tune-in appear."
+		},
+		"animation": {
+			"state": "optional",
+			"toolTip": "Animation options determine how the ad resolves to endframe."
+		},
+		"failover": {
+			"state": "required",
+			"toolTip": "Failover image is a static jpeg, only used in cases when the ad fails to play."
+		}
+	},
 	"assets": {
 		"Background": {
 			"input": {
-				"visible": true,
-				"validation": "/.+/"
-			},
-			"labels": {
-				"toolTip": "Background image should match dimensions of the Container."
+				"state": "required",
+				"toolTip":
+					"Background image: <ul><li>Match dimensions of the Container</li> <li>Do <b>not</b> include brand elements (Title, Logo, CTA, Tune-In)</li></ul>"
 			}
 		},
 		"Title_Treatment": {
 			"input": {
-				"visible": true,
-				"validation": "/.+/"
-			},
-			"labels": {
-				"toolTip": "Title Treatment image should be match dimensions of the Container. Use a transparent PNG."
+				"state": "required",
+				"toolTip": "Title Treatment image:<ul><li>Match dimensions of the Container</li><li>Use a transparent PNG</li></ul>"
 			}
 		},
 		"Tune_In": {
 			"input": {
-				"visible": true,
-				"validation": "/.*/"
-			},
-			"labels": {
-				"toolTip": ""
+				"state": "required",
+				"pattern": ".*",
+				"toolTip": "Tune-in text."
 			}
 		},
 		"CTA": {
 			"input": {
-				"visible": true,
-				"validation": "/.*/"
-			},
-			"labels": {
-				"toolTip": ""
+				"state": "required",
+				"pattern": ".*",
+				"toolTip": "Call-to-action text."
 			}
 		},
 		"FTM": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		},
 		"Exit_URL_iOS": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		},
 		"Exit_URL_Android": {
 			"input": {
-				"visible": false
+				"state": "disabled"
 			}
 		},
 		"Exit_URL_Desktop": {
 			"input": {
-				"visible": false
+				"state": "disabled"
+			}
+		},
+		"Ratings_Bug_20x20": {
+			"input": {
+				"state": "disabled"
 			}
 		}
 	}
