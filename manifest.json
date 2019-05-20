@@ -1,16 +1,12 @@
 {
 	"container": {
 		"lockup": {
-			"state": "optional",
+			"state": "required",
 			"toolTip": "Lock-up options determine where the Netflix Logo, CTA, and Tune-in appear."
 		},
 		"animation": {
-			"state": "optional",
-			"toolTip": "Animation options determine how the ad resolves to endframe."
-		},
-		"failover": {
 			"state": "required",
-			"toolTip": "Failover image is a static jpeg, only used in cases when the ad fails to play."
+			"toolTip": "Animation options determine how the ad resolves to endframe."
 		}
 	},
 	"assets": {
@@ -29,7 +25,7 @@
 		},
 		"Tune_In": {
 			"input": {
-				"state": "required",
+				"state": "optional",
 				"pattern": ".*",
 				"toolTip": "Tune-in text."
 			}
@@ -39,6 +35,11 @@
 				"state": "required",
 				"pattern": ".*",
 				"toolTip": "Call-to-action text."
+			}
+		},
+		"Supercut": {
+			"input": {
+				"state": "disabled"
 			}
 		},
 		"FTM": {
