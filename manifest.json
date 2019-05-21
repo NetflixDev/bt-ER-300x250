@@ -37,6 +37,12 @@
 				"toolTip": "Call-to-action text."
 			}
 		},
+		"Toggle_Supercut": {
+			"input": {
+				"state": "optional",
+				"toolTip": "Enabling Supercut will play FPO video until a Monet Video Asset has been added to the Treatment."
+			}
+		},
 		"Supercut": {
 			"input": {
 				"state": "disabled"
