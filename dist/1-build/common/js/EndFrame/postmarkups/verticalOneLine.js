@@ -7,9 +7,18 @@ import { UIComponent, UIBorder, UIButton, UIImage, TextFormat, UITextField, UISv
 import { ObjectUtils } from 'ad-utils'
 import { titleTreatmentLayout } from './shared.js'
 
-export default function oneLinePostMarkup() {
+export default function verticalOneLine({
+	brandingLockupOffset = 11,
+	tuneInFontSize = 14,
+	brandingLockupAlign = {
+		x: Align.CENTER,
+		y: {
+			type: Align.TOP,
+			against: 210
+		}
+	}
+} = {}) {
 	let T = View.endFrame
-	const oneLineLockupOffset = 11
 
 	// title treatment
 	titleTreatmentLayout(T)
@@ -32,7 +41,7 @@ export default function oneLinePostMarkup() {
 		// free trial messaging
 		Styles.setCss(T.ftm, {
 			color: '#fff',
-			fontSize: 12,
+			fontSize: tuneInFontSize - 2,
 			letterSpacing: 1,
 			textAlign: 'center'
 		})
@@ -44,7 +53,7 @@ export default function oneLinePostMarkup() {
 		// tune-in
 		Styles.setCss(T.tuneIn, {
 			color: '#fff',
-			fontSize: 14,
+			fontSize: tuneInFontSize,
 			letterSpacing: 1,
 			textAlign: 'center'
 		})
@@ -57,7 +66,7 @@ export default function oneLinePostMarkup() {
 			x: {
 				type: Align.RIGHT,
 				outer: true,
-				offset: oneLineLockupOffset
+				offset: brandingLockupOffset
 			},
 			y: Align.CENTER
 		})
@@ -70,7 +79,7 @@ export default function oneLinePostMarkup() {
 		x: {
 			type: Align.RIGHT,
 			outer: true,
-			offset: oneLineLockupOffset
+			offset: brandingLockupOffset
 		},
 		y: Align.CENTER
 	})
@@ -78,23 +87,17 @@ export default function oneLinePostMarkup() {
 	const children = [T.netflixLogo, T.cta]
 
 	if (adData.hasFTM) {
-		children.splice(1, 0, T.ftm)
+		children.push(T.ftm)
 	}
 
 	if (adData.hasTuneIn) {
-		children.splice(1, 0, T.tuneIn)
+		children.push(T.tuneIn)
 	}
 
-	T.ctaLogoLockup = new UIGroup({
+	T.brandingLockup = new UIGroup({
 		target: T,
 		children,
-		align: {
-			x: Align.CENTER,
-			y: {
-				type: Align.TOP,
-				against: 210
-			}
-		}
+		align: brandingLockupAlign
 	})
 
 	// ensure iris renderer is at top of endFrame
