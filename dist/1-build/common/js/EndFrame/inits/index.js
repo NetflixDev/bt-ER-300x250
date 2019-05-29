@@ -10,7 +10,7 @@ import baseInit from './baseInit.js'
 export { sideBySideInit, cornerInit, oneLineInit }
 
 function sideBySideInit(T) {
-	baseInit(T, { logoWidth: 90, ctaWidth: 90, ctaHeight: 24 })
+	baseInit(T, { logoWidth: 111, ctaWidth: 110, ctaHeight: 29 })
 }
 
 function cornerInit(T) {

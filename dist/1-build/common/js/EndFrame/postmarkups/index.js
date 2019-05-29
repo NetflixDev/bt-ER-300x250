@@ -14,7 +14,7 @@ function sideBySidePostMarkup() {
 			x: Align.CENTER,
 			y: {
 				type: Align.BOTTOM,
-				offset: -16
+				offset: -15
 			}
 		}
 	})
