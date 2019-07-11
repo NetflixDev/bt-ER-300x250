@@ -3,12 +3,12 @@
     "image.Background": {
       "type": "image",
       "id": "Background",
-      "url": "treatment-assets/Background.jpg"
+      "url": "treatment-assets/background.jpg"
     },
     "image.Title_Treatment": {
       "type": "image",
       "id": "Title_Treatment",
-      "url": "treatment-assets/Title_Treatment.png"
+      "url": ""
     },
     "text.Tune_In": {
       "type": "text",

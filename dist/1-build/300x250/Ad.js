@@ -30,15 +30,13 @@ export class Ad {
 		})
 
 		if (adData.useSupercut && Device.type === 'desktop') {
-			View.intro = new Intro({ target: View.main })
-		}
-
-		if (adData.useRibbon) {
 			View.ribbon = new NetflixRibbon()
 			View.ribbon.addEventListener('coverComplete', function(event) {
 				event.stopImmediatePropagation() // this event was coming through twice
 				Animation.playIntro()
 			})
+
+			View.intro = new Intro({ target: View.main })
 		}
 
 		View.mainBorder = new MainBorder()

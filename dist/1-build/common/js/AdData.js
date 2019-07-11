@@ -34,6 +34,5 @@ export default function AdData() {
 	self.svg = {}
 
 	self.useSupercut = MonetUtils.getDataByKey('Toggle_Supercut')
-	self.useRibbon = MonetUtils.getDataByKey('Toggle_Ribbon')
 	self.hasTT = !!MonetUtils.getDataByKey('Title_Treatment')
 }

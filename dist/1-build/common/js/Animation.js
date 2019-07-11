@@ -1,14 +1,37 @@
 import { Styles, Markup, Align, Effects } from 'ad-view'
 
+const RIBBON_ANIM_TIME = 0.6
+const INIT_ZOOM_START = 1.5
+const INIT_ZOOM_SCALE = 2
+const INIT_ZOOM_DURATION = RIBBON_ANIM_TIME + 1
+const RIBBON_START = INIT_ZOOM_START + INIT_ZOOM_DURATION - 0.75
+
 export class Animation {
 	static start() {
 		console.log('Animation.start()')
+
+		if (View.endFrame.iris) {
+			TweenLite.set(View.endFrame.iris.canvas, { opacity: 0 })
+		}
+
 		// show the main container
 		global.removePreloader()
 		Styles.setCss(View.main, { opacity: 1 })
 
-		if (View.ribbon) {
-			View.ribbon.play()
+		if (adData.useSupercut) {
+			View.endFrame.show()
+			// have Netflix logo already fully in
+			View.endFrame.netflixLogo.progress(1)
+
+			TweenLite.to(View.endFrame, INIT_ZOOM_DURATION, {
+				delay: INIT_ZOOM_START,
+				scale: INIT_ZOOM_SCALE,
+				ease: Power2.easeIn
+			})
+
+			TweenLite.delayedCall(RIBBON_START, () => {
+				View.ribbon.play()
+			})
 		} else {
 			Animation.playIntro()
 		}
@@ -38,6 +61,15 @@ export class Animation {
 
 	static showEndFrame() {
 		console.log('Animation.showEndFrame()')
+
+		if (adData.useSupercut) {
+			// reset endframe after ribbon and supercut
+			View.endFrame.netflixLogo.progress(0)
+			if (View.endFrame.iris) {
+				TweenLite.set(View.endFrame.iris.canvas, { opacity: 1 })
+			}
+			TweenLite.set(View.endFrame, { scale: 1 })
+		}
 
 		if (View.intro) View.intro.hide()
 		View.endFrame.show()
