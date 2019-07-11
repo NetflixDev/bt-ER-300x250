@@ -29,13 +29,13 @@ export class Ad {
 			layout: window.Creative && Creative.layout
 		})
 
-		if (adData.useSupercut && Device.type === 'desktop') {
-			View.ribbon = new NetflixRibbon()
-			View.ribbon.addEventListener('coverComplete', function(event) {
-				event.stopImmediatePropagation() // this event was coming through twice
-				Animation.playIntro()
-			})
+		View.ribbon = new NetflixRibbon()
+		View.ribbon.addEventListener('coverComplete', function(event) {
+			event.stopImmediatePropagation() // this event was coming through twice
+			Animation.playIntro()
+		})
 
+		if (adData.useSupercut && Device.type === 'desktop') {
 			View.intro = new Intro({ target: View.main })
 		}
 

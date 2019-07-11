@@ -1,7 +1,5 @@
-import { Styles, Markup, Align, Effects } from 'ad-view'
-
 const RIBBON_ANIM_TIME = 0.6
-const INIT_ZOOM_START = 1.5
+const INIT_ZOOM_START = 1
 const INIT_ZOOM_SCALE = 2
 const INIT_ZOOM_DURATION = RIBBON_ANIM_TIME + 1
 const RIBBON_START = INIT_ZOOM_START + INIT_ZOOM_DURATION - 0.75
@@ -16,7 +14,7 @@ export class Animation {
 
 		// show the main container
 		global.removePreloader()
-		Styles.setCss(View.main, { opacity: 1 })
+		TweenLite.set(View.main, { opacity: 1 })
 
 		if (adData.useSupercut) {
 			View.endFrame.show()
@@ -33,7 +31,7 @@ export class Animation {
 				View.ribbon.play()
 			})
 		} else {
-			Animation.playIntro()
+			View.ribbon.play()
 		}
 	}
 
@@ -44,7 +42,7 @@ export class Animation {
 
 	static playIntro() {
 		if (View.intro) {
-			Styles.setCss(View.intro.netflixLogo, { opacity: 1 })
+			TweenLite.set(View.intro.netflixLogo, { opacity: 1 })
 			View.intro.introVideoPlayer.play()
 
 			TweenLite.delayedCall(2.5, function() {
