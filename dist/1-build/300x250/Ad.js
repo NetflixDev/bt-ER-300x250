@@ -34,6 +34,10 @@ export class Ad {
 			event.stopImmediatePropagation() // this event was coming through twice
 			Animation.playIntro()
 		})
+		// View.ribbon.addEventListener('leftPillarComplete', function(event) {
+		// 	event.stopImmediatePropagation() // this event was coming through twice
+		// 	Animation.playCreative()
+		// })
 
 		if (adData.useSupercut && Device.type === 'desktop') {
 			View.intro = new Intro({ target: View.main })
