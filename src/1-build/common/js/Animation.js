@@ -8,15 +8,14 @@ export class Animation {
 	static start() {
 		console.log('Animation.start()')
 
-		if (View.endFrame.iris) {
-			TweenLite.set(View.endFrame.iris.canvas, { opacity: 0 })
-		}
-
 		// show the main container
 		global.removePreloader()
 		TweenLite.set(View.main, { opacity: 1 })
 
 		if (adData.useSupercut) {
+			if (View.endFrame.iris) {
+				TweenLite.set(View.endFrame.iris.canvas, { opacity: 0 })
+			}
 			View.endFrame.show()
 			// have Netflix logo already fully in
 			View.endFrame.netflixLogo.progress(1)
@@ -72,6 +71,11 @@ export class Animation {
 		if (View.intro) View.intro.hide()
 		View.endFrame.show()
 
+		const creative = new Creative()
+		creative.play()
+	}
+
+	static playCreative() {
 		const creative = new Creative()
 		creative.play()
 	}
