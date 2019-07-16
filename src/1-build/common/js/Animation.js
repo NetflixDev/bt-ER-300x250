@@ -58,7 +58,6 @@ export class Animation {
 
 	static showEndFrame() {
 		console.log('Animation.showEndFrame()')
-
 		if (adData.useSupercut) {
 			// reset endframe after ribbon and supercut
 			View.endFrame.netflixLogo.progress(0)
@@ -72,10 +71,17 @@ export class Animation {
 		View.endFrame.show()
 
 		const creative = new Creative()
-		creative.play()
+		if (creative.init) {
+			creative.init()
+		}
+
+		if (adData.useSupercut) {
+			creative.play()
+		}
 	}
 
 	static playCreative() {
+		console.log('Animation.playCreative()')
 		const creative = new Creative()
 		creative.play()
 	}
