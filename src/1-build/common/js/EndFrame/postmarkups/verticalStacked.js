@@ -63,4 +63,9 @@ export default function verticalStacked({
 	} else {
 		T.removeChild(T.ratingsBug)
 	}
+
+	// ensure iris renderer is at top of endFrame
+	if (T.iris) {
+		T.appendChild(T.iris.canvas)
+	}
 }
