@@ -1,15 +1,17 @@
 const RIBBON_ANIM_TIME = 0.6
-const INIT_ZOOM_START = 1
-const INIT_ZOOM_SCALE = 2
+const INIT_ZOOM_START = 0
+const INIT_ZOOM_SCALE = 50
 const INIT_ZOOM_DURATION = RIBBON_ANIM_TIME + 1
-const RIBBON_START = INIT_ZOOM_START + INIT_ZOOM_DURATION - 0.75
+const RIBBON_START = INIT_ZOOM_START + INIT_ZOOM_DURATION - 0.6
 
 export class Animation {
 	static start() {
 		console.log('Animation.start()')
 
 		// show the main container
-		global.removePreloader()
+		TweenLite.delayedCall(0.1, () => {
+			global.removePreloader()
+		})
 		TweenLite.set(View.main, { opacity: 1 })
 
 		if (adData.useSupercut) {
@@ -23,7 +25,7 @@ export class Animation {
 			TweenLite.to(View.endFrame, INIT_ZOOM_DURATION, {
 				delay: INIT_ZOOM_START,
 				scale: INIT_ZOOM_SCALE,
-				ease: Power2.easeIn
+				ease: Power4.easeIn
 			})
 
 			TweenLite.delayedCall(RIBBON_START, () => {
