@@ -1,8 +1,8 @@
 const RIBBON_ANIM_TIME = 0.6
+const RIBBON_START = 0.75
 const INIT_ZOOM_START = 0
-const INIT_ZOOM_SCALE = 50
-const INIT_ZOOM_DURATION = RIBBON_ANIM_TIME + 1.3
-const RIBBON_START = INIT_ZOOM_START + INIT_ZOOM_DURATION - 0.6
+const INIT_ZOOM_SCALE = 5
+const INIT_ZOOM_DURATION = RIBBON_START + RIBBON_ANIM_TIME
 
 export class Animation {
 	static start() {
@@ -22,10 +22,16 @@ export class Animation {
 			// have Netflix logo already fully in
 			View.endFrame.netflixLogo.progress(1)
 
+			const _subScale = 1 + (INIT_ZOOM_SCALE - 1) * 0.1
 			TweenLite.to(View.endFrame, INIT_ZOOM_DURATION, {
 				delay: INIT_ZOOM_START,
-				scale: INIT_ZOOM_SCALE,
-				ease: Power4.easeIn
+				scale: _subScale,
+				ease: Linear.easeNone
+			})
+			TweenLite.to(View.endFrame.subLayer, INIT_ZOOM_DURATION, {
+				delay: INIT_ZOOM_START,
+				scale: INIT_ZOOM_SCALE - _subScale,
+				ease: Expo.easeIn
 			})
 
 			TweenLite.delayedCall(RIBBON_START, () => {
@@ -66,7 +72,7 @@ export class Animation {
 			if (View.endFrame.iris) {
 				TweenLite.set(View.endFrame.iris.canvas, { opacity: 1 })
 			}
-			TweenLite.set(View.endFrame, { scale: 1 })
+			TweenLite.set([View.endFrame, View.endFrame.subLayer], { scale: 1 })
 		}
 
 		if (View.intro) View.intro.hide()
