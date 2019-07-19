@@ -15,10 +15,10 @@ function sideBySideInit(T) {
 
 function cornerInit(T) {
 	const extraCtaLogoInit = (cta, logo) => {
-		cta.setAttribute('min-font-size', 7)
+		cta.setAttribute('min-font-size', 6)
 		cta.setAttribute('stretch-origin', 'right')
 	}
-	baseInit(T, { logoWidth: 75, ctaWidth: 75, ctaHeight: 20, extraCtaLogoInit })
+	baseInit(T, { logoWidth: 75, ctaWidth: 75, ctaMaxWidth: 75, ctaHeight: 20, extraCtaLogoInit })
 }
 
 function oneLineInit(T) {

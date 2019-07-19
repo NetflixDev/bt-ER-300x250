@@ -8,7 +8,7 @@
     "image.Title_Treatment": {
       "type": "image",
       "id": "Title_Treatment",
-      "url": ""
+      "url": "treatment-assets/title_treatment.png"
     },
     "text.Tune_In": {
       "type": "text",
@@ -53,7 +53,7 @@
     "video.Supercut": {
       "type": "video",
       "id": "Supercut",
-      "url": "https://ae.nflximg.net/assets/prod/94b3e9ce-a957-427e-bbf9-e11566afd288/20170725/bbfcd816-af58-4593-846a-f3502942aaaa.mp4",
+      "url": "treatment-assets/supercut.mp4",
       "videoType": "SUPERCUT"
     }
   },
