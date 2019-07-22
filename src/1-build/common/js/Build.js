@@ -102,13 +102,7 @@ export function EndFrame(arg) {
       height: "inherit"
     }
   };
-
-  const _uiObj = ObjectUtils.defaults(arg, base, true);
-
-  const T = new UIComponent(_uiObj);
-  T.subLayer = new UIComponent(_uiObj);
-
-  T.subLayer.appendChild(T);
+  const T = new UIComponent(ObjectUtils.defaults(arg, base, true));
 
   let endFrameInit = sideBySideInit;
   switch (arg.layout) {

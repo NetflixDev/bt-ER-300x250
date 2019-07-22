@@ -1,7 +1,3 @@
-/**
- * This animation preset uses ff0000-ad-tech/ad-canvas package to animate canvas-rendered elements
- * See here for more details: https://github.com/ff0000-ad-tech/ad-canvas
- */
 var Creative = function() {
   this.play = function() {
     console.log("Creative.play()");

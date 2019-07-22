@@ -8,7 +8,7 @@
     "image.Title_Treatment": {
       "type": "image",
       "id": "Title_Treatment",
-      "url": "treatment-assets/title_treatment.png"
+      "url": ""
     },
     "bool.Retina_Title_Treatment": {
       "type": "bool",
@@ -50,15 +50,20 @@
       "id": "Ratings_Bug_20x20",
       "url": ""
     },
+    "bool.Toggle_Ribbon": {
+      "type": "bool",
+      "id": "Toggle_Ribbon",
+      "value": false
+    },
     "bool.Toggle_Supercut": {
       "type": "bool",
       "id": "Toggle_Supercut",
-      "value": true
+      "value": false
     },
     "video.Supercut": {
       "type": "video",
       "id": "Supercut",
-      "url": "treatment-assets/supercut.mp4",
+      "url": "https://ae.nflximg.net/assets/prod/94b3e9ce-a957-427e-bbf9-e11566afd288/20170725/bbfcd816-af58-4593-846a-f3502942aaaa.mp4",
       "videoType": "SUPERCUT"
     }
   },

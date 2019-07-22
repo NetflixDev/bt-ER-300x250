@@ -26,13 +26,7 @@ function cornerInit(T) {
     cta.setAttribute("min-font-size", 6);
     cta.setAttribute("stretch-origin", "right");
   };
-  baseInit(T, {
-    logoWidth: 75,
-    ctaWidth: 75,
-    ctaMaxWidth: 75,
-    ctaHeight: 20,
-    extraCtaLogoInit
-  });
+  baseInit(T, { logoWidth: 75, ctaWidth: 75, ctaHeight: 20, extraCtaLogoInit });
 }
 
 function oneLineInit(T) {
