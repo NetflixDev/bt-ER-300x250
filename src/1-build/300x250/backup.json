@@ -13,7 +13,7 @@
     "bool.Retina_Title_Treatment": {
       "type": "bool",
       "id": "Retina_Title_Treatment",
-      "value": false
+      "value": true
     },
     "text.Tune_In": {
       "type": "text",
