@@ -10,6 +10,11 @@
       "id": "Title_Treatment",
       "url": "treatment-assets/title_treatment.png"
     },
+    "bool.Retina_Title_Treatment": {
+      "type": "bool",
+      "id": "Retina_Title_Treatment",
+      "value": false
+    },
     "text.Tune_In": {
       "type": "text",
       "id": "Tune_In",
