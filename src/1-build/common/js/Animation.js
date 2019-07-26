@@ -4,8 +4,37 @@ export class Animation {
   static start() {
     console.log("Animation.start()");
     // show the main container
-    global.removePreloader();
-    Styles.setCss(View.main, { opacity: 1 });
+    TweenLite.delayedCall(0.1, () => {
+      global.removePreloader();
+    });
+    TweenLite.set(View.main, { opacity: 1 });
+
+    const RIBBON_ANIM_TIME = 0.6;
+    const RIBBON_START = 0.75;
+    const INIT_ZOOM_START = 0;
+    const INIT_ZOOM_SCALE = 5;
+    const INIT_ZOOM_DURATION = RIBBON_START + RIBBON_ANIM_TIME;
+
+    if (adData.useSupercut) {
+      if (View.endFrame.iris) {
+        TweenLite.set(View.endFrame.iris.canvas, { opacity: 0 });
+      }
+      View.endFrame.show();
+      // have Netflix logo already fully in
+      View.endFrame.netflixLogo.progress(1);
+
+      const _subScale = 1 + (INIT_ZOOM_SCALE - 1) * 0.03;
+      const _timeOffset = INIT_ZOOM_DURATION * 0.3;
+      TweenLite.to(View.endFrame, INIT_ZOOM_DURATION, {
+        delay: INIT_ZOOM_START,
+        scale: _subScale,
+        ease: Linear.easeNone
+      });
+      TweenLite.to(View.endFrame.subLayer, INIT_ZOOM_DURATION - _timeOffset, {
+        delay: INIT_ZOOM_START + _timeOffset,
+        scale: INIT_ZOOM_SCALE - _subScale,
+        ease: Expo.easeIn
+      });
 
     if (View.ribbon) {
       View.ribbon.play();

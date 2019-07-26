@@ -77,7 +77,7 @@ export function Intro(arg) {
   T.appendChild(T.netflixLogo);
 
   T.postMarkupStyling = function() {
-    Styles.setCss(View.intro.netflixLogo, { opacity: 0 });
+    TweenLite.set(View.intro.netflixLogo, { opacity: 0 });
     Align.set(View.intro.netflixLogo, {
       x: {
         type: Align.LEFT,

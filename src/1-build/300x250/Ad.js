@@ -10,7 +10,6 @@ import {
 import { Animation } from "@common/js/Animation.js";
 import { Control } from "@common/js/Control.js";
 import { Device } from "ad-external";
-import { MonetUtils } from "ad-utils";
 
 export class Ad {
   // called from index.html onImpression()
