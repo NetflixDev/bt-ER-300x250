@@ -36,10 +36,11 @@ export class Animation {
         ease: Expo.easeIn
       });
 
-    if (View.ribbon) {
-      View.ribbon.play();
+      TweenLite.delayedCall(RIBBON_START, () => {
+        View.ribbon.play();
+      });
     } else {
-      Animation.playIntro();
+      View.ribbon.play();
     }
   }
 
@@ -67,10 +68,30 @@ export class Animation {
 
   static showEndFrame() {
     console.log("Animation.showEndFrame()");
+    if (adData.useSupercut) {
+      // reset endframe after ribbon and supercut
+      View.endFrame.netflixLogo.progress(0);
+      if (View.endFrame.iris) {
+        TweenLite.set(View.endFrame.iris.canvas, { opacity: 1 });
+      }
+      TweenLite.set([View.endFrame, View.endFrame.subLayer], { scale: 1 });
+    }
 
     if (View.intro) View.intro.hide();
     View.endFrame.show();
 
+    const creative = new Creative();
+    if (creative.init) {
+      creative.init();
+    }
+
+    if (adData.useSupercut) {
+      creative.play();
+    }
+  }
+
+  static playCreative() {
+    console.log("Animation.playCreative()");
     const creative = new Creative();
     creative.play();
   }
