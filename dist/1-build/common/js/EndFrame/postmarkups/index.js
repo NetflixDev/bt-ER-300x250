@@ -13,8 +13,8 @@ export {
 function sideBySidePostMarkup() {
   verticalSideBySide({
     ctaLogoOffset: 13,
-    tuneInFontSize: 16,
-    tuneInLockupOffset: 15,
+    headlineFontSize: 16,
+    headlineLockupOffset: 15,
     brandingLockupAlign: {
       x: Align.CENTER,
       y: {
@@ -27,7 +27,7 @@ function sideBySidePostMarkup() {
 
 function cornerLeftPostMarkup() {
   verticalStacked({
-    tuneInFontSize: 16,
+    headlineFontSize: 16,
     brandingLockupOffset: 11,
     brandingLockupElemXAlign: Align.CENTER,
     brandingLockupAlign: {
@@ -45,7 +45,7 @@ function cornerLeftPostMarkup() {
 
 function cornerRightPostMarkup() {
   verticalStacked({
-    tuneInFontSize: 16,
+    headlineFontSize: 16,
     brandingLockupOffset: 11,
     brandingLockupElemXAlign: Align.CENTER,
     brandingLockupAlign: {
@@ -64,7 +64,7 @@ function cornerRightPostMarkup() {
 function oneLinePostMarkup() {
   verticalOneLine({
     brandingLockupOffset: 11,
-    tuneInFontSize: 14,
+    headlineFontSize: 14,
     brandingLockupAlign: {
       x: Align.CENTER,
       y: {
