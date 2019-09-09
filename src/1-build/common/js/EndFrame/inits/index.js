@@ -21,11 +21,16 @@ function sideBySideInit(T) {
   baseInit(T, { logoWidth: 111, ctaWidth: 110, ctaHeight: 29 });
 }
 
+const extraCtaLogoInit = (cta, logo) => {
+  cta.addEventListener("ready", () => {
+    const ctaSpan = cta.querySelector("span");
+    ctaSpan.style.letterSpacing = "0px";
+  });
+  cta.setAttribute("min-font-size", 6);
+  cta.setAttribute("stretch-origin", "right");
+};
+
 function cornerInit(T) {
-  const extraCtaLogoInit = (cta, logo) => {
-    cta.setAttribute("min-font-size", 6);
-    cta.setAttribute("stretch-origin", "right");
-  };
   baseInit(T, { logoWidth: 75, ctaWidth: 75, ctaHeight: 20, extraCtaLogoInit });
 }
 
