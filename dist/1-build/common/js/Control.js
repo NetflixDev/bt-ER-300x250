@@ -19,6 +19,7 @@ Markup.get('main').appendChild(View.netflixFonts)
 		console.log('Control.postMarkup()')
 // listen for default exit
 Gesture.add(View.endFrame, GestureEvent.CLICK, Control.handleClick)
+Gesture.add(View.intro, GestureEvent.CLICK, Control.handleClick)
 
 
 
@@ -36,7 +37,7 @@ Gesture.add(View.endFrame, GestureEvent.OUT, function() {
 
 
 	static handleClick(event) {	
-if (window.Monet) {
+if (window.Monet && event && event.mouse) {
 	Monet.trackEvent('CLICK', {
 		src: event.target.id,
 		coords: {
@@ -101,8 +102,8 @@ ImageManager.load(function() {
 		View.intro.hide()
 		Animation.showEndFrame()
 		View.intro.introVideoPlayer.pause()
-		Control.handleClick()
 	}
 	
+
 
 }
