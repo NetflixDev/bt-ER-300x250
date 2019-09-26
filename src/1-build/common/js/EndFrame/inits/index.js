@@ -22,10 +22,6 @@ function sideBySideInit(T) {
 }
 
 const extraCtaLogoInit = (cta, logo) => {
-  cta.addEventListener("ready", () => {
-    const ctaSpan = cta.querySelector("span");
-    ctaSpan.style.letterSpacing = "0px";
-  });
   cta.setAttribute("min-font-size", 6);
   cta.setAttribute("stretch-origin", "right");
 };
@@ -35,5 +31,5 @@ function cornerInit(T) {
 }
 
 function oneLineInit(T) {
-  baseInit(T, { logoWidth: 75, ctaWidth: 83, ctaMaxWidth: 90, ctaHeight: 22 });
+  baseInit(T, { logoWidth: 85, ctaWidth: 83, ctaMaxWidth: 90, ctaHeight: 22 });
 }

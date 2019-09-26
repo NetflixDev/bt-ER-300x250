@@ -13,7 +13,7 @@ export {
 function sideBySidePostMarkup() {
   verticalSideBySide({
     ctaLogoOffset: 13,
-    headlineFontSize: 14,
+    headlineFontSize: 16,
     headlineLockupOffset: 15,
     brandingLockupAlign: {
       x: Align.CENTER,
@@ -64,7 +64,7 @@ function cornerRightPostMarkup() {
 function oneLinePostMarkup() {
   verticalOneLine({
     brandingLockupOffset: 11,
-    headlineFontSize: 12,
+    headlineFontSize: 15,
     brandingLockupAlign: {
       x: Align.CENTER,
       y: {
