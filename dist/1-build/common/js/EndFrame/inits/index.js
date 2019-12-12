@@ -15,7 +15,7 @@ function sideBySideInit(T) {
 
 const extraCtaLogoInit = (cta, logo) => {
 	cta.setAttribute('min-font-size', 6)
-	cta.setAttribute('stretch-origin', 'right')
+	// cta.setAttribute('stretch-origin', 'right')
 }
 
 function cornerInit(T) {
